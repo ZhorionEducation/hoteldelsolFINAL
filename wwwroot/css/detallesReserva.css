@@ -1,0 +1,93 @@
+﻿/* Estilos generales */
+
+body {
+    background-image: url('/img/Reserva/detalles.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+.container {
+    max-width: 800px; /* Establece un ancho máximo para que no se extienda demasiado horizontalmente */
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* Encabezados */
+.title {
+    font-size: 1.75rem; /* Ajustado */
+    font-weight: bold;
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 0.75rem; /* Reducido */
+}
+
+/* Información de reserva */
+.reservation-info {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con 80% de opacidad */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem; /* Reducido */
+}
+
+    .reservation-info h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #4a5568;
+        margin-bottom: 0.5rem; /* Reducido */
+    }
+
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem; /* Reducido aún más el gap entre columnas */
+}
+
+.font-medium {
+    font-weight: 500;
+    color: #718096;
+    margin-bottom: 0.25rem; /* Reducido */
+}
+
+.text-gray-900 {
+    color: #1a202c;
+    margin-bottom: 0.25rem; /* Reducido */
+}
+
+/* Botones */
+.button {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.icon-edit {
+    color: #e5ff00; 
+    font-size: 24px; 
+}
+
+.icon-edit:hover {
+    color: #a8c916; 
+}
+
+
+
+.button-gray {
+    background-color: #a0aec0;
+    color: white;
+}
+
+    .button-gray:hover {
+        background-color: #718096;
+    }
+
+/* Otros estilos de margen y padding */
+.mb-6 {
+    margin-bottom: 0.5rem; /* Reducido aún más */
+}
+
+.mt-6 {
+    margin-top: 0.5rem; /* Reducido */
+}

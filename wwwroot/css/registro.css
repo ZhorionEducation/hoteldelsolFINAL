@@ -1,0 +1,200 @@
+﻿body {
+  background-image: url(../img/Login/login.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+}
+
+.container-registro {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+  width: 90%; /* Ajusta el ancho para hacerlo más pequeño */
+  max-width: 900px; /* Opcional: establece un ancho máximo */
+}
+
+/* Aplica el color azul a todos los iconos de Font Awesome dentro de .container-registro */
+.icon-blue {
+  color: #007bff;
+  font-size: 4.0em; /* Ajusta el tamaño del icono */
+}
+.input-group-text .bi {
+  color: #007bff; /* Azul claro */
+}
+h1,
+h4 {
+  color: #008cff;
+  text-align: center;
+}
+
+p {
+  color: #008cff;
+  font-weight: bold;
+}
+
+/* Estilos del formulario */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 250px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bebbbb;
+  border-radius: 4px;
+  background-color: aliceblue;
+}
+
+.form-check-label {
+  color: #000;
+}
+
+.control-label {
+  color: #000;
+  font-size: large;
+}
+
+/* Estilos para los checkboxes */
+.checkbox-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.checkbox-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checkbox-list li {
+  margin-bottom: 5px;
+}
+
+.selected-items {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-height: 50px;
+  background-color: #f9f9f9;
+}
+
+.selected-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 2px 5px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #696666;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-secondary:hover {
+  background-color: #000000;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.fa-user,
+.fa-envelope,
+.fa-phone,
+.fa-calendar-alt,
+.fa-clock,
+.fa-users,
+.fa-bed,
+.fa-plus,
+.fa-dollar-sign,
+.bi-lock,
+.bi-person,
+.bi-telephone,
+.bi-calendar {
+  color: #007bff;
+  font-size: 1.2em; /* Ajusta el tamaño del icono */
+}
+
+footer {
+  background-color: #000;
+  margin-top: auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Estilos para el select y el icono */
+.select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon-blue {
+  fill: #007bff;
+}
+
+.select-container select {
+  width: 100%;
+  padding-right: 30px; /* Espacio para el icono */
+}
+
+.select-container .select-arrow {
+  position: absolute;
+  right: 10px;
+  pointer-events: none; /* Permite hacer clic en el select sin interferencia del icono */
+  font-size: 1.2em; /* Ajusta el tamaño del icono */
+}
+
+/* Asegura que los iconos dentro de los inputs estén alineados y tengan el mismo tamaño */
+.input-group .input-group-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em; /* Ajusta el tamaño del icono */
+  background-color: #fff;
+  
+}

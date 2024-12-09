@@ -1,0 +1,72 @@
+﻿@model Hotel.Models.ServiciosAdicionale
+
+@{
+    ViewData["Title"] = "Detalles del Servicio";
+}
+
+<div id="detailsContainer" class="w-100">
+    <h4 class="w-100"><i class="fas fa-info-circle"></i> Detalles del Servicio</h4>
+    <hr class="w-100"/>
+    <table class="table table-bordered w-100" style="width: 100%;">
+        <tr hidden>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-id-badge"></i> ID del Servicio:</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-tag"></i> Nombre:</td>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-align-left"></i> Descripción:</td>
+            <td>
+                @if (string.IsNullOrEmpty(Model.Descripcion))
+                {
+                    <span>No hay descripción disponible</span>
+                }
+                else
+                {
+                    @Model.Descripcion
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-dollar-sign"></i> Precio:</td>
+            <td>@Model.Precio.ToString("C", new System.Globalization.CultureInfo("es-CO"))</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-image"></i> Imagen:</td>
+            <td>
+                @if (!string.IsNullOrEmpty(Model.Imagen))
+                {
+                    <img src="~/img/servicios/@Model.Imagen" alt="Imagen del servicio" 
+                         class="img-thumbnail comprobante-thumbnail" onclick="showFullImage(this.src)" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-info-circle"></i> Estado:</td>
+            <td>
+                <div class="form-check form-switch switch-lg">
+                    <input class="form-check-input" type="checkbox" id="switch-@Model.Id" 
+                           @(Model.Activo ?? false ? "checked" : "") disabled>
+                    <label class="form-check-label" for="switch-@Model.Id">
+                        @((Model.Activo ?? false) ? "Activo" : "Inactivo")
+                    </label>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" id="buttonEdit" onclick="loadEditForm('@Model.Id')">
+        <i class="fas fa-edit"></i> Editar
+    </button>
+    <button type="button" class="btn btn-secondary buttonClose" onclick="closeDetailsModal()">
+        <i class="fas fa-times"></i> Cerrar
+    </button>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/scriptServicios/indexServicios.js"></script>
+}

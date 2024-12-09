@@ -1,0 +1,147 @@
+﻿@model Hotel.Models.Reserva
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/Flick/jquery-ui.css">
+
+<div id="detailsContainer">
+    <h4><i class="fas fa-info-circle"></i> Detalles de la Reserva</h4>
+    <hr />
+    <table class="table table-bordered" style="width: 100%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-id-badge"></i> ID de Reserva:</td>
+            <td>@Model.Id.ToString().Substring(0, 8)</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-user"></i> Usuario:</td>
+            <td>@Model.Usuario.NombreUsuario</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-user"></i> Nombre:</td>
+            <td>@Model.Usuario.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-bed"></i> Habitación:</td>
+            <td>@Model.Habitacion.NumeroHabitacion, @Model.Habitacion.Descripcion, @Model.Habitacion.PrecioPorNoche.ToString("C0", new System.Globalization.CultureInfo("es-CO")) Por Noche
+                <p id="precioTotalHabitacion" class="mt-2">
+                    @if (Model.FechaInicio != default(DateOnly) && Model.FechaFin != default(DateOnly))
+                    {
+                        var dias = (Model.FechaFin.ToDateTime(TimeOnly.MinValue) - Model.FechaInicio.ToDateTime(TimeOnly.MinValue)).Days;
+                        var totalHabitacion = Model.Habitacion.PrecioPorNoche * dias;
+                        @($"Total por {dias} días: {totalHabitacion.ToString("C0", new System.Globalization.CultureInfo("es-CO"))}")
+                    }
+                </p>
+            </td>
+            
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-users"></i> Acompañantes:</td>
+            <td>
+                @if (Model.Huespedes == null || !Model.Huespedes.Any())
+                {
+                    <span>No tiene acompañantes</span>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var huesped in Model.Huespedes.Where(h => h.Nombre != Model.Usuario.Nombre))
+                        {
+                            <li>@huesped.Nombre</li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-info-circle"></i> Estado de la reserva:</td>
+            <td>
+                @if (Model.Pagos != null && Model.Pagos.Any())
+                {
+                    @Model.Pagos.First().Estado
+                }
+                else
+                {
+                    <span>Reservado</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-calendar-plus"></i> Fecha de Inicio:</td>
+            <td>@Model.FechaInicio.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-calendar-minus"></i> Fecha de Fin:</td>
+            <td>@Model.FechaFin.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-calendar-check"></i> Fecha de Reserva:</td>
+            <td>@(Model.FechaReserva.HasValue ? Model.FechaReserva.Value.ToString("d") : "Sin fecha")</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-couch"></i> Comodidades:</td>
+            <td>
+                @if (Model.Habitacion.Comodidades == null || !Model.Habitacion.Comodidades.Any())
+                {
+                    <span>No tiene comodidades</span>
+                }
+                else
+                {
+                    @string.Join(", ", Model.Habitacion.Comodidades.Select(c => c.Nombre))
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-concierge-bell"></i> Servicios:</td>
+            <td>
+                @if (Model.Servicios == null || !Model.Servicios.Any())
+                {
+                    <span>No tiene servicios</span>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var servicio in Model.Servicios)
+                        {
+                            <li>@servicio.Nombre - @servicio.Precio.ToString("C0", new
+                        System.Globalization.CultureInfo("es-CO"))</li>
+                        }
+                    </ul>
+                    <p id="precioTotalServicios" class="mt-2">
+                        @{
+                            var totalServicios = Model.Servicios.Sum(s => s.Precio);
+                            @($"Total de servicios: {totalServicios.ToString("C0", new System.Globalization.CultureInfo("es-CO"))}")
+                        }
+                    </p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-dollar-sign"></i> Base:</td>
+            <td>@Model.PrecioTotal.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-dollar-sign"></i> Total con IVA:</td>
+            <td>
+                @{
+                    var precioConIva = Model.PrecioTotal * 1.19m;
+                }
+                @precioConIva.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                <small class="text-muted">(Incluye IVA 19%)</small>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" id="buttonEdit" onclick="loadEditForm('@Model.Id')">
+        <i class="fas fa-edit icon"></i> Editar
+    </button>
+    <button type="button" class="btn btn-secondary buttonClose" onclick="closeDetailsModal()">
+        <i class="fas fa-times"></i> Cerrar
+    </button>
+
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="~/js/scriptReservas/editReserva.js"></script>
+    <script src="~/js/scriptReservas/indexReserva.js"></script>
+
+}

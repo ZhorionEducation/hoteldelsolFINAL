@@ -1,0 +1,138 @@
+﻿@model Hotel.Models.Pago
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Pagar Reserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+}
+
+<link rel="stylesheet" href="~/css/Reservas/pagos.css">
+
+
+
+<form id="formpagos" asp-action="Pagar" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <h2>Pagar Reserva</h2>
+    <div class="form-group">
+        <label asp-for="MetodoPago" class="control-label">Método de Pago</label>
+        <select asp-for="MetodoPago" class="form-control" id="metodoPagoSelect" required>
+            <option value="" disabled selected>Seleccione Método de Pago</option>
+            <option value="Nequi">Nequi</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Bancolombia">Bancolombia</option>
+        </select>
+        <span asp-validation-for="MetodoPago" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Precio Total de la Reserva (con IVA)</label>
+        <p class="text-danger fw-bold fs-4">
+            @{
+                var precioTotal = Model.Reserva?.PrecioTotal ?? 0;
+                var precioConIva = precioTotal * 1.19m;
+            }
+            @precioConIva.ToString("C", new CultureInfo("es-CO"))
+        </p>
+    </div>
+
+    @{
+        var minimoAbono = precioConIva * 0.5m;
+        var minimoAbonoFormatted = minimoAbono.ToString("C", new CultureInfo("es-CO"));
+    }
+    <div id="qrCodeContainer" class="form-group" style="display:none;">
+        <label>Escanea el código QR para hacer el pago</label>
+        <img id="qrCodeImage" src="" alt="Código QR" style="width: 150px; height: 150px;" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Monto" class="control-label">Monto que abonarás (Mínimo el 50%)</label>
+        <input asp-for="Monto" class="form-control" type="number" step="0.01" min="@minimoAbono" required
+            data-val="true" data-val-required="El monto que abonarás es requerido"
+            data-val-number="El campo debe ser un número"
+            data-val-min="@($"Por favor, ingresa un valor mayor o igual a {minimoAbonoFormatted}")"
+            data-val-min-min="@minimoAbono" />
+        <span asp-validation-for="Monto" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="comprobante" class="form-label">
+            <span class="iconify icon" data-icon="mdi:image"></span> Subir Comprobante
+        </label>
+        <input type="file" name="comprobante" id="comprobante" class="form-control" accept="image/*" data-val="true"
+            data-val-required="Por favor seleccione una imagen" title="Por favor seleccione una imagen" />
+        <span class="text-danger field-validation-valid" data-valmsg-for="imagen" data-valmsg-replace="true"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Estado" value="Estado del Pago" />
+        <input type="hidden" asp-for="ReservaId" />
+        <span asp-validation-for="Estado" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="ReservaId" />
+    <div class="form-group">
+        <input type="submit" name="submitButton" value="Pagar" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"
+        integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/localization/messages_es.min.js"
+        integrity="sha512-Kcb2OYCSBj5/343s73G4ue17xTxHhWeLwfzE8gDQh9EAbWyEt8Jh6cNgGt86XgjS0JRzIlARtVPLa+o57+HQ2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/scriptReservas/swiftAlertPago.js"></script>
+    <script>
+        $.validator.setDefaults({
+            messages: {
+                min: function (params, element) {
+                    return `Por favor, ingresa un valor mayor o igual a ${new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(params)}`;
+                }
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('metodoPagoSelect').addEventListener('change', function () {
+            var metodoPago = this.value;
+            var qrCodeContainer = document.getElementById('qrCodeContainer');
+            var qrCodeImage = document.getElementById('qrCodeImage');
+
+            if (metodoPago) {
+                var qrCodeUrl = '';
+
+                switch (metodoPago) {
+                    case 'Nequi':
+                        qrCodeUrl = '/img/codigoqr/nequi.png';
+                        break;
+                    case 'PayPal':
+                        qrCodeUrl = '/img/codigoqr/ppal.png';
+                        break;
+                    case 'Bancolombia':
+                        qrCodeUrl = '/img/codigoqr/bancolombia.png';
+                        break;
+                    default:
+                        qrCodeUrl = '';
+                }
+
+                if (qrCodeUrl) {
+                    qrCodeImage.src = qrCodeUrl;
+                    qrCodeContainer.style.display = 'block';
+                } else {
+                    qrCodeContainer.style.display = 'none';
+                }
+            } else {
+                qrCodeContainer.style.display = 'none';
+            }
+        });
+    </script>
+
+
+    <partial name="_ValidationScriptsPartial" />
+}

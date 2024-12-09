@@ -1,0 +1,41 @@
+﻿@model Hotel.Models.ServiciosAdicionale
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>¿Estás seguro de que deseas eliminar este servicio?</h3>
+<div>
+    <hr />
+    <table class="table table-bordered" style="width: 100%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Nombre:</td>
+            <td>@Html.DisplayFor(model => model.Nombre)</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Descripción:</td>
+            <td>@Html.DisplayFor(model => model.Descripcion)</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Precio:</td>
+            <td>@Html.DisplayFor(model => model.Precio)</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Imagen:</td>
+            <td>@Html.DisplayFor(model => model.Imagen)</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Activo:</td>
+            <td>@Html.DisplayFor(model => model.Activo)</td>
+        </tr>
+    </table>
+    
+    <form id="deleteForm" asp-action="Delete" onsubmit="event.preventDefault(); handleDelete('deleteForm');">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">
+            <i class="iconify" data-icon="mdi:delete" data-width="24" data-height="24"></i> 
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="iconify" data-icon="mdi:arrow-left" data-width="24" data-height="24"></i> 
+        </a>
+    </form>
+</div>

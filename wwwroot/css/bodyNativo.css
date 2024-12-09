@@ -1,0 +1,115 @@
+﻿body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.book_btn a {
+    display: inline-block;
+    padding: 10px 20px;  
+    font-size: 16px; 
+    white-space: nowrap; 
+}
+
+@media (max-width: 992px) {
+    .book_btn {
+        display: block;
+        text-align: center;
+    }
+}
+
+.shrink {
+    transform: scale(1); 
+    transform-origin: left center;
+    transition: transform 0.5s ease;
+}
+
+.main-content {
+    flex: 1 0 auto;
+    padding-top: 86px; /* ajuste de espaciado nav */
+    
+}
+
+.header-area {
+    position: fixed  ;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: #000; 
+
+}
+
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+    footer .Privacy {
+        color: white;
+        font-size: 10px; /* Reducir el tamaño de la fuente */
+    }
+
+
+
+
+.menu-icon-container {
+    margin-right: auto;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px; 
+    position: fixed; 
+    top: 10px; 
+    left: 10px; 
+    z-index: 1001; 
+}
+
+
+@media (max-width: 768px) {
+    .header-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .col-xl-2, .col-lg-2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+
+        /* Forzamos el tamaño del logo */
+        .logo-img img {
+            width: 250px !important; /* Important para que la plantilla no la sobreescriba */
+            height: auto;
+        }
+
+    .main-content {
+        padding-top: 45px;
+    }
+
+    .slicknav_menu {
+        display: none !important;
+    }
+}
+
+

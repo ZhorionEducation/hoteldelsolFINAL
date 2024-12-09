@@ -1,0 +1,460 @@
+﻿@model Hotel.Models.DashboardViewModel
+@using System.Globalization
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@* <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> *@
+
+<style>
+    h2 {
+        text-align: center;
+    }
+
+    :root {
+        --primary-color: #4361ee;
+        --success-color: #2ec4b6;
+        --warning-color: #ff9f1c;
+        --info-color: #3a86ff;
+        --text-primary: #2d3748;
+        --text-secondary: #718096;
+    }
+
+    body {
+        background-color: #f8fafc;
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .dashboard-container {
+        padding: 2rem;
+    }
+
+    .dashboard-title {
+        color: var(--text-primary);
+        font-weight: 700;
+        font-size: 1.875rem;
+        margin-bottom: 2rem;
+    }
+
+    .stats-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(7px);
+    }
+
+    .stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .stats-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+    }
+
+    .stats-label {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+    }
+
+    .stats-icon {
+        font-size: 2.5rem;
+        opacity: 0.9;
+        padding: 0.5rem;
+        border-radius: 12px;
+    }
+
+    .stats-icon.text-primary {
+        color: var(--primary-color);
+        background: rgba(67, 97, 238, 0.1);
+    }
+
+    .stats-icon.text-success {
+        color: var(--success-color);
+        background: rgba(46, 196, 182, 0.1);
+    }
+
+    .stats-icon.text-warning {
+        color: var(--warning-color);
+        background: rgba(255, 159, 28, 0.1);
+    }
+
+    .stats-icon.text-info {
+        color: var(--info-color);
+        background: rgba(58, 134, 255, 0.1);
+    }
+
+    .chart-container {
+        height: 350px;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+
+    #monthSelect {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        background-color: white;
+        transition: all 0.2s;
+    }
+
+    #monthSelect:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    }
+
+    .chart-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-4">Dashboard</h2>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.TotalUsers</div>
+                        <div class="stats-label">Clientes activos del hotel</div>
+                    </div>
+                    <i class="fas fa-users stats-icon text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.TotalReservations</div>
+                        <div class="stats-label">Reservas Activas</div>
+                    </div>
+                    <i class="fas fa-calendar-check stats-icon text-success"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.TotalPayments</div>
+                        <div class="stats-label">Total Pagos</div>
+                    </div>
+                    <i class="fas fa-dollar-sign stats-icon text-warning"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.TotalRooms</div>
+                        <div class="stats-label">Habitaciones</div>
+                    </div>
+                    <i class="fas fa-bed stats-icon text-info"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-4">
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.GlobalHotelRating.ToString("0.0")</div>
+                        <div class="stats-label">Promedio Calificación Hotel</div>
+                    </div>
+                    <i class="fas fa-star stats-icon text-warning"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.GlobalServiceRating.ToString("0.0")</div>
+                        <div class="stats-label">Promedio Calificación Servicio</div>
+                    </div>
+                    <i class="fas fa-star stats-icon text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-4">
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.BestRatedRoomNumber</div>
+                        <div class="stats-label">Habitación Mejor Calificada</div>
+                    </div>
+                    <i class="fas fa-star stats-icon text-warning"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="stats-value">@Model.BestRatedRoomScore.ToString("0.0")</div>
+                        <div class="stats-label">Puntuación de la Habitación Mejor Calificada</div>
+                    </div>
+                    <i class="fas fa-star stats-icon text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <!-- Charts -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <form method="get" asp-action="Index">
+                    <div class="form-group">
+                        <label for="monthSelect">Seleccionar Mes:</label>
+                        <select id="monthSelect" name="month" class="form-select" style="width: 200px"
+                            onchange="this.form.submit()">
+                            @foreach (var month in Model.Months)
+                            {
+                                <option value="@month.Value"
+                                    selected="@(month.Value == Model.SelectedMonth.ToString() ? "selected" : null)">
+                                    @month.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </form>
+                <h5>Ocupación de Habitaciones</h5>
+                <div class="chart-container">
+                    <canvas id="roomOccupancyChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Reservas Mensuales</h5>
+                </div>
+                <div class="chart-container">
+                    <canvas id="monthlyBookingsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Habitaciones Más Reservadas </h5>
+                </div>
+                <div class="chart-container">
+                    <canvas id="mostBookedRoomsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="stats-card p-3">
+                <h5>Mejor Habitación Calificada por Tipo</h5>
+                <div class="chart-container">
+                    <canvas id="bestRatedRoomByTypeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Gráfico de Calificaciones de Hotel y Servicio
+
+        Chart.defaults.font.family = "'Inter', 'system-ui', '-apple-system', 'sans-serif'";
+        Chart.defaults.color = '#718096';
+        Chart.defaults.scale.grid.color = '#EDF2F7';
+
+        // Your existing chart configurations remain the same
+        // Just update the colors to match the new theme:
+        const chartColors = ['#4361ee', '#2ec4b6', '#ff9f1c', '#3a86ff'];
+
+
+
+        var bestRatedRoomByTypeData = @Html.Raw(Json.Serialize(Model.BestRatedRoomByType));
+
+        var bestRatedRoomByTypeCtx = document.getElementById('bestRatedRoomByTypeChart').getContext('2d');
+        new Chart(bestRatedRoomByTypeCtx, {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.BestRatedRoomByType.Keys)),
+                datasets: [{
+                    data: @Html.Raw(Json.Serialize(Model.BestRatedRoomByType.Values.Select(v => v.AverageRating))),
+                    backgroundColor: chartColors
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                var roomNumber = context.label;
+                                var averageRating = context.raw;
+                                var roomType = bestRatedRoomByTypeData[roomNumber].tipo; // Cambiado a 'tipo'
+
+                                return `Habitación: ${roomNumber}\nTipo: ${roomType}\nCalificación Promedio: ${averageRating}`;
+                            }
+                        }
+                    },
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        // Gráfico de Reservas Mensuales
+        var monthlyBookingsCtx = document.getElementById('monthlyBookingsChart').getContext('2d');
+        new Chart(monthlyBookingsCtx, {
+            type: 'line',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.MonthlyBookings.Keys)),
+                datasets: [{
+                    label: 'Reservas',
+                    data: @Html.Raw(Json.Serialize(Model.MonthlyBookings.Values)),
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Ocupación por Tipo de Habitación
+        var roomOccupancyCtx = document.getElementById('roomOccupancyChart').getContext('2d');
+        new Chart(roomOccupancyCtx, {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.RoomOccupancy.Keys)),
+                datasets: [{
+                    data: @Html.Raw(Json.Serialize(Model.RoomOccupancy.Values)),
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 16 // Reduced from 100 to a more reasonable size
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 50,
+                        top: 50,
+                        bottom: 50
+                    }
+                }
+            }
+        });
+        var mostBookedRoomsCtx = document.getElementById('mostBookedRoomsChart').getContext('2d');
+        new Chart(mostBookedRoomsCtx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.MostBookedRooms.Keys)),
+                datasets: [{
+                    label: 'Cantidad de Reservas',
+                    data: @Html.Raw(Json.Serialize(Model.MostBookedRooms.Values)),
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Reservas'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Número de Habitación'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Habitaciones Más Reservadas del Mes'
+                    }
+                }
+            }
+        });
+    </script>
+}

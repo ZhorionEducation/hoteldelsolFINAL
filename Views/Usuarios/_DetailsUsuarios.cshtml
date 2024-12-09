@@ -1,0 +1,60 @@
+@model Hotel.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h3>Detalles del Usuario</h3>
+    <table class="table table-bordered" style="width: 100%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-user"></i> Nombre de Usuario:</td>
+            <td>@Model.NombreUsuario</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-id-card"></i> Nombre:</td>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-id-card"></i> Apellido:</td>
+            <td>@Model.Apellido</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-phone"></i> Teléfono:</td>
+            <td>@Model.Telefono</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-envelope"></i> Email:</td>
+            <td>@Model.CorreoElectronico</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-birthday-cake"></i> Fecha de Nacimiento:</td>
+            <td>@Model.FechaNacimiento?.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-venus-mars"></i> Género:</td>
+            <td>@Model.Genero?.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-user-tag"></i> Rol:</td>
+            <td>@Model.Rol?.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-calendar-alt"></i> Fecha de Registro:</td>
+            <td>@Model.FechaRegistro?.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-toggle-on"></i> Estado:</td>
+            <td>
+                <span>@(Model.Activo ? "Activo" : "Inactivo")</span>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" id="buttonEdit" onclick="loadEditForm('@Model.Id')">
+        <i class="fas fa-edit"></i> 
+    </button>
+    <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Index", "Usuarios")'">
+        <i class="fas fa-times"></i> 
+    </button>
+</div>

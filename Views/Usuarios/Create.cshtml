@@ -1,0 +1,619 @@
+﻿@model Hotel.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="~/css/registro.css" />
+
+<body>
+    <div class="container-registro">
+        <h1>Registro</h1>
+        <h4>Usuario</h4>
+        <hr />
+        <form asp-action="Create" id="registroForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreUsuario" class="control-label">Nombre Usuario</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="NombreUsuario" class="form-control" />
+                </div>
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoElectronico" class="control-label">Correo Electrónico</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="CorreoElectronico" class="form-control" />
+                </div>
+                <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrasena" class="control-label">Contraseña</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-6V9c0-3.31-2.69-6-6-6S6 5.69 6 9v2H4v10h16V11h-2zm-2 0H8V9c0-2.21 1.79-4 4-4s4 1.79 4 4v2z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="Contrasena" class="form-control" type="password" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <span asp-validation-for="Contrasena" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label">Confirmar Contraseña</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-6V9c0-3.31-2.69-6-6-6S6 5.69 6 9v2H4v10h16V11h-2zm-2 0H8V9c0-2.21 1.79-4 4-4s4 1.79 4 4v2z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input type="password" id="confirmarContrasena" class="form-control" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <span id="confirmarContrasenaError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="Nombre" class="form-control" />
+                </div>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label">Apellido</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="Apellido" class="form-control" />
+                </div>
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoDocumentoId" class="control-label">Tipo de Documento</label>
+                <div class="select-container">
+                    <select asp-for="TipoDocumentoId" class="form-control" asp-items="ViewBag.TipoDocumentoId"></select>
+                    <svg class="icon-blue select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24px" height="24px">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </div>
+                <span asp-validation-for="TipoDocumentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroDocumento" class="control-label">Número Documento</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="NumeroDocumento" class="form-control" maxlength="10" />
+                </div>
+                <span asp-validation-for="NumeroDocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label">Teléfono</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
+                    </div>
+                    <input asp-for="Telefono" class="form-control" />
+                </div>
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" width="24px" height="24px">
+                                <path
+                                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <input asp-for="FechaNacimiento" class="form-control" type="date" />
+                </div>
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneroId" class="control-label">Género</label>
+                <div class="select-container">
+                    <select asp-for="GeneroId" class="form-control" asp-items="ViewBag.GeneroId"></select>
+                    <svg class="icon-blue select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor" width="24px" height="24px">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </div>
+            </div>
+            @if (User?.IsInRole("Administrador") ?? true)
+            {
+                <div class="form-group">
+                    <label asp-for="RolId" class="control-label">Rol</label>
+                    <select asp-for="RolId" class="form-control" asp-items="ViewBag.RolId"></select>
+                </div>
+            }
+            <div class="buttonRegister">
+                <input type="submit" value="Registrarme" class="btn btn-primary" />
+            </div>
+            <div>
+                <a href="javascript:void(0)" onclick="window.history.back()" class="back-link">Volver Atrás</a>
+            </div>
+        </form>
+    </div>
+</body>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        let timeoutId;
+        const form = document.getElementById('registroForm');
+
+        // Función para validar campo único
+        async function validarCampoUnico(campo, valor) {
+            if (!valor) return true;
+
+            try {
+                const response = await fetch('/Usuarios/VerificarDatoUnico', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    },
+                    body: `campo=${campo}&valor=${valor}`
+                });
+
+                const data = await response.json();
+                return !data.existe;
+            } catch (error) {
+                console.error('Error al validar:', error);
+                return false;
+            }
+        }
+
+        // Función para validar contraseñas
+        function validarContraseñas() {
+            const contrasena = document.getElementById('Contrasena').value;
+            const confirmarContrasena = document.getElementById('confirmarContrasena').value;
+
+            return contrasena === confirmarContrasena;
+        }
+
+        // Función para calcular edad
+        function calcularEdad(fechaNacimiento) {
+            const hoy = new Date();
+            const nacimiento = new Date(fechaNacimiento);
+            let edad = hoy.getFullYear() - nacimiento.getFullYear();
+            const mes = hoy.getMonth() - nacimiento.getMonth();
+
+            if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+                edad--;
+            }
+
+            return edad;
+        }
+
+        // Función para validar todos los campos requeridos
+        function validarCamposRequeridos() {
+            const camposRequeridos = {
+                'NombreUsuario': 'Nombre de Usuario',
+                'CorreoElectronico': 'Correo Electrónico',
+                'Contrasena': 'Contraseña',
+                'confirmarContrasena': 'Confirmar Contraseña',
+                'Nombre': 'Nombre',
+                'Apellido': 'Apellido',
+                'NumeroDocumento': 'Número de Documento',
+                'FechaNacimiento': 'Fecha de Nacimiento',
+                'TipoDocumentoId': 'Tipo de Documento',
+                'GeneroId': 'Género'
+            };
+
+            const camposVacios = [];
+
+            for (const [id, nombre] of Object.entries(camposRequeridos)) {
+                const campo = document.getElementById(id);
+                if (!campo || !campo.value.trim()) {
+                    camposVacios.push(nombre);
+                }
+            }
+
+            return camposVacios;
+        }
+
+        // Función para validar campos únicos
+        async function validarCamposUnicos() {
+            const camposUnicos = {
+                'nombreusuario': { id: 'NombreUsuario', nombre: 'Nombre de Usuario' },
+                'correoelectronico': { id: 'CorreoElectronico', nombre: 'Correo Electrónico' },
+                'telefono': { id: 'Telefono', nombre: 'Teléfono' },
+                'numerodocumento': { id: 'NumeroDocumento', nombre: 'Número de Documento' }
+            };
+
+            const camposDuplicados = [];
+
+            for (const [campo, info] of Object.entries(camposUnicos)) {
+                const valor = document.getElementById(info.id).value;
+                if (valor) {
+                    const estaDisponible = await validarCampoUnico(campo, valor);
+                    if (!estaDisponible) {
+                        camposDuplicados.push(info.nombre);
+                    }
+                }
+
+            }
+
+            return camposDuplicados;
+        }
+
+        // Agregar esta función al script existente
+        function validarFormularioCompleto() {
+            // Obtener todos los mensajes de validación
+            const validationMessages = document.querySelectorAll('.text-danger');
+            const errores = [];
+
+            validationMessages.forEach(message => {
+                if (message.textContent.trim() !== '') {
+                    // Obtener el label asociado al campo con error
+                    const fieldName = message.previousElementSibling.querySelector('label')?.textContent || 'Campo';
+                    errores.push(`${fieldName}: ${message.textContent}`);
+                }
+            });
+
+            return errores;
+        }
+
+        // Modificar el event listener del formulario
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Validar el formulario completo primero
+            const erroresValidacion = validarFormularioCompleto();
+            if (erroresValidacion.length > 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de validación',
+                    html: `Por favor corrige los siguientes errores:<br><br>${erroresValidacion.join('<br>')}`,
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // Resto de las validaciones existentes...
+            const camposVacios = validarCamposRequeridos();
+            if (camposVacios.length > 0) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Campos Incompletos',
+                    html: `Por favor, complete los siguientes campos:<br><br>${camposVacios.join('<br>')}`,
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // Validación de campos únicos
+            const camposDuplicados = await validarCamposUnicos();
+            if (camposDuplicados.length > 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Datos Duplicados',
+                    html: `Los siguientes datos ya están registrados:<br><br>${camposDuplicados.join('<br>')}`,
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // Continuar con el resto de las validaciones existentes...
+            if (!validarContraseñas()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Las contraseñas no coinciden',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            const fechaNacimiento = document.getElementById('FechaNacimiento').value;
+            if (!fechaNacimiento) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'La fecha de nacimiento es obligatoria',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            const edad = calcularEdad(fechaNacimiento);
+            if (edad < 18) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Debes ser mayor de 18 años para registrarte',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // Add document length validation
+            const numeroDocumento = document.getElementById('NumeroDocumento').value;
+            if (numeroDocumento.length > 10) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El número de documento no puede tener más de 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            this.submit();
+        });
+
+        // Validar nombre de usuario al escribir
+        document.getElementById('NombreUsuario').addEventListener('input', function () {
+            clearTimeout(timeoutId);
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            timeoutId = setTimeout(async () => {
+                const esValido = await validarCampoUnico('nombreusuario', this.value);
+                submitButton.disabled = !esValido;
+
+                if (!esValido) {
+                    document.getElementById('NombreUsuario-error').textContent = 'Este nombre de usuario ya existe';
+                } else {
+                    document.getElementById('NombreUsuario-error').textContent = '';
+                }
+            }, 500);
+        });
+
+        // Validar correo electrónico al escribir
+        document.getElementById('CorreoElectronico').addEventListener('input', function () {
+            clearTimeout(timeoutId);
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            timeoutId = setTimeout(async () => {
+                const esValido = await validarCampoUnico('correoelectronico', this.value);
+                submitButton.disabled = !esValido;
+
+                if (!esValido) {
+                    document.getElementById('CorreoElectronico-error').textContent = 'Este correo electrónico ya está registrado';
+                } else {
+                    document.getElementById('CorreoElectronico-error').textContent = '';
+                }
+            }, 500);
+        });
+
+        // Validar contraseñas en tiempo real
+        document.getElementById('confirmarContrasena').addEventListener('input', function () {
+            const submitButton = document.querySelector('button[type="submit"]');
+            const errorSpan = document.getElementById('confirmarContrasenaError');
+
+            if (!validarContraseñas()) {
+                errorSpan.textContent = 'Las contraseñas no coinciden';
+                submitButton.disabled = true;
+            } else {
+                errorSpan.textContent = '';
+                submitButton.disabled = false;
+            }
+        });
+
+        // Validar fecha al cambiar
+        document.getElementById('FechaNacimiento').addEventListener('change', function () {
+            const fechaNacimiento = new Date(this.value);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            const errorSpan = document.querySelector('[data-valmsg-for="FechaNacimiento"]');
+
+            if (edad < 18) {
+                errorSpan.textContent = 'Debes ser mayor de 18 años para registrarte';
+                this.setCustomValidity('Debes ser mayor de 18 años para registrarte');
+                return;
+            }
+
+            if (edad > 123) {
+                errorSpan.textContent = 'La edad máxima permitida es 123 años';
+                this.setCustomValidity('La edad máxima permitida es 123 años');
+                return;
+            }
+
+            errorSpan.textContent = '';
+            this.setCustomValidity('');
+        });
+
+        // Add max date restriction for minimum age (18 years)
+        const fechaNacimiento = document.getElementById('FechaNacimiento');
+        const hoy = new Date();
+        const minDate = new Date();
+        minDate.setFullYear(hoy.getFullYear() - 123); // Max age 123 years
+        const maxDate = new Date();
+        maxDate.setFullYear(hoy.getFullYear() - 18); // Min age 18 years
+
+        fechaNacimiento.max = maxDate.toISOString().split('T')[0];
+        fechaNacimiento.min = minDate.toISOString().split('T')[0];
+
+        // Add this JavaScript to your existing script:
+        document.getElementById('NumeroDocumento').addEventListener('paste', function (e) {
+            e.preventDefault();
+
+            // Get pasted data
+            const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+
+            // Remove non-digits and limit to 10 characters
+            const cleanedData = pastedData.replace(/\D/g, '').slice(0, 10);
+
+            // Set the cleaned value
+            this.value = cleanedData;
+
+            if (pastedData.length > 10) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Límite alcanzado',
+                    text: 'El número de documento debe tener máximo 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+
+        // Add to existing script
+        document.getElementById('NumeroDocumento').addEventListener('input', function (e) {
+            // Remove non-numeric characters
+            this.value = this.value.replace(/\D/g, '');
+
+            // Check length
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Límite excedido',
+                    text: 'El número de documento no puede tener más de 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+
+        // Add event listeners for phone input
+        document.getElementById('Telefono').addEventListener('input', function (e) {
+            // Remove non-numeric characters
+            this.value = this.value.replace(/\D/g, '');
+
+            // Check length
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Límite excedido',
+                    text: 'El número de teléfono debe tener exactamente 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+
+        // Prevent paste of non-numeric characters
+        document.getElementById('Telefono').addEventListener('paste', function (e) {
+            e.preventDefault();
+
+            // Get pasted data and clean it
+            const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+            const cleanedData = pastedData.replace(/\D/g, '').slice(0, 10);
+
+            // Set the cleaned value
+            this.value = cleanedData;
+
+            if (pastedData.length > 10) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Límite alcanzado',
+                    text: 'El número de teléfono debe tener exactamente 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to toggle password visibility
+            function togglePasswordVisibility(inputField, button) {
+                const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
+                inputField.setAttribute('type', type);
+
+                // Toggle eye icon
+                const icon = button.querySelector('i');
+                if (type === 'password') {
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
+            }
+
+            // Set up event listeners for both password fields
+            const passwordFields = [
+                {
+                    input: document.querySelector('[name="Contrasena"]'),
+                    button: document.querySelector('[name="Contrasena"]').closest('.input-group').querySelector('.toggle-password')
+                },
+                {
+                    input: document.querySelector('#confirmarContrasena'),
+                    button: document.querySelector('#confirmarContrasena').closest('.input-group').querySelector('.toggle-password')
+                }
+            ];
+
+            passwordFields.forEach(field => {
+                field.button.addEventListener('click', () => {
+                    togglePasswordVisibility(field.input, field.button);
+                });
+            });
+        });
+    </script>
+}

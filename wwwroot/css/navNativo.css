@@ -1,0 +1,45 @@
+.book_btn a {
+    border-radius: 10px; /* Ajusta el valor según tus necesidades */
+    padding: 10px 20px; /* Opcional: para mejorar la apariencia del botón */
+    background-color: #007bff; /* Opcional: color de fondo */
+    color: white; /* Opcional: color del texto */
+    text-decoration: none; /* Opcional: quitar subrayado */
+}
+
+.book_btn a:hover {
+    background-color: #ffff !important; /* Opcional: color de fondo al pasar el ratón */
+    color: black !important;
+}
+
+.login-link {
+    font-size: 44px !important; /* Ajusta el tamaño según sea necesario */
+    color: #ffffff !important; /* Opcional: cambiar el color del texto */
+    
+}
+
+.logout-icon{
+    font-size: 34px;
+    color: #fff;
+   
+}
+
+.logout-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.welcome-text{
+    font-size: 14px;
+    color: #fff;
+}
+
+.logo-sideNav {
+    width: 100%;
+   
+}
+.logo-container {
+    margin-top: auto;
+}
+

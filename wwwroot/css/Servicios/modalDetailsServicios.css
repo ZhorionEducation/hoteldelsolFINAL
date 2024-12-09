@@ -1,0 +1,46 @@
+/* customStyles.css */
+#detailsContainer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#detailsContainer h4 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#detailsContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#detailsContainer table tr td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#detailsContainer table tr td:first-child {
+    font-weight: bold;
+    color: #555;
+}
+
+#detailsContainer table tr td i {
+    margin-right: 10px;
+}
+
+#detailsContainer table tr td img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#detailsContainer hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}

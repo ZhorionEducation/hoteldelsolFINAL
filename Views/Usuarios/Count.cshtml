@@ -1,0 +1,350 @@
+@model Hotel.Models.Usuario
+
+@{
+    ViewData["Title"] = "Mi Cuenta";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Mi Cuenta</h3>
+                </div>
+                <div class="card-body">
+                    <form id="countForm" asp-action="Count" method="post">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="RolId" />
+                        <input type="hidden" asp-for="Activo" />
+                        <input type="hidden" asp-for="FechaRegistro" />
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="NombreUsuario" class="form-label">Nombre de Usuario</label>
+                                <input asp-for="NombreUsuario" class="form-control" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="CorreoElectronico" class="form-label">Correo Electrónico</label>
+                                <input asp-for="CorreoElectronico" class="form-control" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="Nombre" class="form-label">Nombre</label>
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Apellido" class="form-label">Apellido</label>
+                                <input asp-for="Apellido" class="form-control" />
+                                <span asp-validation-for="Apellido" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="Telefono" class="form-label">Teléfono</label>
+                                <input asp-for="Telefono" class="form-control" />
+                                <span asp-validation-for="Telefono" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="GeneroId" class="form-label">Género</label>
+                                <select asp-for="GeneroId" class="form-select" asp-items="ViewBag.GeneroId">
+                                    <option value="">-- Seleccione un género --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="TipoDocumentoId" class="form-label">Tipo de Documento</label>
+                                <select asp-for="TipoDocumentoId" class="form-select"
+                                    asp-items="ViewBag.TipoDocumentoId">
+                                    <option value="">-- Seleccione un tipo --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="NumeroDocumento" class="form-label">Número de Documento</label>
+                                <input asp-for="NumeroDocumento" class="form-control" />
+                                <span asp-validation-for="NumeroDocumento" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- New password field -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="NewPassword" class="form-label">Nueva Contraseña</label>
+                                <input asp-for="NewPassword" class="form-control" type="password" />
+                                <span asp-validation-for="NewPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex">
+                            <button type="submit" class="btn btn-primary mr-2">
+                                <i class="iconify" data-icon="mdi:content-save"></i>
+                                Guardar
+                            </button>
+                            
+                        
+                            <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                                <i class="iconify" data-icon="mdi:arrow-left"></i>
+                                Volver Atrás
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $("#countForm").on("submit", function (e) {
+                e.preventDefault();
+
+                // Validate phone number first
+                const telefonoInput = document.getElementById('Telefono');
+                if (!telefonoInput.value.trim() || telefonoInput.value.length < 10) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error de validación',
+                        text: 'El teléfono debe tener exactamente 10 dígitos',
+                        confirmButtonColor: '#3085d6'
+                    });
+                    return false; // Prevent form submission
+                }
+
+                // Validate other required fields
+                if (!$(this).valid()) { // jQuery validation check
+                    return false;
+                }
+
+                // If validation passes, proceed with AJAX
+                var token = $('input[name="__RequestVerificationToken"]').val();
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: '@Url.Action("Count", "Usuarios")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'RequestVerificationToken': token
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Éxito!',
+                                text: 'Los cambios se guardaron correctamente',
+                                confirmButtonColor: '#3085d6'
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message || 'Ocurrió un error al guardar los cambios',
+                                confirmButtonColor: '#3085d6'
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Ocurrió un error al procesar la solicitud',
+                            confirmButtonColor: '#3085d6'
+                        });
+                    }
+                });
+            });
+        });
+
+        const countForm = document.querySelector('form');
+        const nombreInput = document.getElementById('Nombre');
+        const apellidoInput = document.getElementById('Apellido');
+        const telefonoInput = document.getElementById('Telefono');
+
+        // Validate nombre (only letters)
+        nombreInput?.addEventListener('input', function () {
+            const regex = /^[a-zA-Z]+$/;
+            if (!regex.test(this.value)) {
+                this.setCustomValidity('El nombre solo puede contener letras.');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Formato inválido',
+                    text: 'El nombre solo puede contener letras',
+                    confirmButtonColor: '#3085d6'
+                });
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Validate apellido (only letters)
+        apellidoInput?.addEventListener('input', function () {
+            const regex = /^[a-zA-Z]+$/;
+            if (!regex.test(this.value)) {
+                this.setCustomValidity('El apellido solo puede contener letras.');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Formato inválido',
+                    text: 'El apellido solo puede contener letras',
+                    confirmButtonColor: '#3085d6'
+                });
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Update phone input validation
+        telefonoInput?.addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+            const submitButton = document.querySelector('button[type="submit"]');
+            const phoneErrorSpan = document.querySelector('[data-valmsg-for="Telefono"]');
+
+            if (this.value.length < 10) {
+                this.setCustomValidity('El teléfono debe tener 10 dígitos');
+                submitButton.disabled = true;
+                phoneErrorSpan.textContent = 'El teléfono debe tener exactamente 10 dígitos';
+            } else {
+                this.setCustomValidity('');
+                submitButton.disabled = false;
+                phoneErrorSpan.textContent = '';
+            }
+
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Límite excedido',
+                    text: 'El teléfono debe tener exactamente 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+        });
+
+        // Form submission validation
+        countForm?.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validate required fields
+            const requiredFields = [
+                { element: nombreInput, message: 'El nombre es obligatorio' },
+                { element: apellidoInput, message: 'El apellido es obligatorio' },
+                { element: telefonoInput, message: 'El teléfono es obligatorio' }
+            ];
+
+            // Check empty fields
+            for (const field of requiredFields) {
+                if (!field.element.value.trim()) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Campo requerido',
+                        text: field.message,
+                        confirmButtonColor: '#3085d6'
+                    });
+                    return;
+                }
+            }
+
+            // Validate field formats
+            if (!nombreInput.value.match(/^[a-zA-Z]+$/)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de validación',
+                    text: 'El nombre solo puede contener letras',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            if (!apellidoInput.value.match(/^[a-zA-Z]+$/)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de validación',
+                    text: 'El apellido solo puede contener letras',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // Validate phone number
+            if (!telefonoInput.value || telefonoInput.value.length < 10) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de validación',
+                    text: 'El teléfono debe tener exactamente 10 dígitos',
+                    confirmButtonColor: '#3085d6'
+                });
+                return;
+            }
+
+            // If all validations pass
+            this.submit();
+        });
+    </script>
+}
+@section Styles {
+    <style>
+        body {
+            background-image: url('/img/usuarios/Count.jpg');
+            /* Updated path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(5px);
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .form-control,
+        .form-select {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 30px;
+        }
+    </style>
+}

@@ -1,0 +1,201 @@
+﻿@using Hotel.Helpers
+@model PaginatedList<Hotel.Models.Habitacione>
+
+
+@{
+    ViewData["Title"] = "Gestión de Habitaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Habitaciones/modalDetailsHabitaciones.css">
+<link rel="stylesheet" href="~/css/Habitaciones/modalEditHabitaciones.css">
+<link rel="stylesheet" href="~/css/Habitaciones/modalsGlobalHabitaciones.css">
+<link rel="stylesheet" href="~/css/Habitaciones/habitacionesIndex.css">
+
+<div class="containerindexHabitaciones">
+    <div class="header">
+        <h1>Gestión de Habitaciones</h1>
+        <div class="containerActions">
+            <a href="@Url.Action("Create", "Habitaciones")" class="button"><i class="fas fa-plus"></i>Crear Nueva
+                Habitación</a>
+            <div class="search-container">
+
+
+                <div class="export-container">
+                    <details class="export-dropdown">
+                        <summary class="export-summary">Filtros de Exportación</summary>
+                        <div class="filter-groups">
+                            <div class="filter-group">
+                                <h6>Estado</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="active" name="exportFilters">
+                                    <label class="form-check-label">Activas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="inactive"
+                                        name="exportFilters">
+                                    <label class="form-check-label">Inactivas</label>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h6>Tipo</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="simple" name="exportFilters">
+                                    <label class="form-check-label">Individuales</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="doble" name="exportFilters">
+                                    <label class="form-check-label">Dobles</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="suite" name="exportFilters">
+                                    <label class="form-check-label">Deluxe</label>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h6>Fechas</h6>
+                                <div class="date-filters">
+                                    <div class="form-group">
+                                        <label>Desde:</label>
+                                        <input type="date" id="dateFrom" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Hasta:</label>
+                                        <input type="date" id="dateTo" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <div class="export-buttons">
+                        <a href="#" onclick="exportToPdf()" class="button-pdf"><i class="fas fa-file-pdf"></i></a>
+                        <a href="#" onclick="exportToExcel()" class="button-excel"><i class="fas fa-file-excel"></i></a>
+                    </div>
+                </div>
+
+                <form method="get" asp-action="Index" class="search-container">
+                    <input checked="" class="checkbox" type="checkbox">
+                    <div class="mainbox">
+                        <div class="iconContainer">
+                            <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"
+                                class="search_icon">
+                                <path
+                                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                                </path>
+                            </svg>
+                        </div>
+                        <input class="search_input" placeholder="Buscar reservas..." type="text" id="searchInput"
+                            name="searchString" value="@ViewData["CurrentFilter"]">
+                        <button type="submit" class="search_input">B</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Número de Habitación</th>
+                    <th>Foto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NumeroHabitacion</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.Imagen))
+                            {
+                                <img src="~/img/habitaciones/@item.Imagen" alt="Imagen de la habitación" class="img-thumbnail"
+                                    onclick="showFullImage(this.src)" />
+                            }
+                        </td>
+                        <td>
+                            <div class="form-check form-switch switch-lg">
+                                <input class="form-check-input" type="checkbox" id="switch-@item.Id" @(item.Activo ?? false ?
+                            "checked" : "") disabled>
+                                <label class="form-check-label" for="switch-@item.Id">@((item.Activo ?? false) ? "" :
+                            "")</label>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="loadDetailsModal('@item.Id')" class="btn btn-info">
+                                <span class="iconify icon-search" data-icon="line-md:search-filled" data-inline="false"
+                                    data-rotate="auto"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- Controles de Paginación -->
+        <div class="pagination-container">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                        <a class="page-link"
+                            href="@Url.Action("Index", new { page = Model.PageIndex - 1, searchString = ViewData["CurrentFilter"] })"
+                            aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                            <a class="page-link"
+                                href="@Url.Action("Index", new { page = i, searchString = ViewData["CurrentFilter"] })">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                        <a class="page-link"
+                            href="@Url.Action("Index", new { page = Model.PageIndex + 1, searchString = ViewData["CurrentFilter"] })"
+                            aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    }
+    else
+    {
+        <p>No hay habitaciones disponibles.</p>
+    }
+
+    <!-- Modal para edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <div class="modal-body">
+                <div id="editFormContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para detalles -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetailsModal()">&times;</span>
+            <div class="modal-body">
+                <div id="detailsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="~/js/scriptHabitaciones/indexHabitaciones.js"></script>
+
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

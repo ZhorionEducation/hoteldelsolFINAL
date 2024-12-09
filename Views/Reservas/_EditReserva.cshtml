@@ -1,0 +1,191 @@
+﻿@model Hotel.Models.Reserva
+
+@{
+    ViewData["Title"] = "Editar Reserva";
+}
+@{
+    bool isAdmin = User.IsInRole("Administrador");
+}
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/Flick/jquery-ui.css">
+
+<div class="reserva-edit-container">
+    <h1 class="reserva-edit-title"><i class="fas fa-edit"></i> Editar Reserva</h1>
+
+    <form asp-action="Edit" id="editForm" class="reserva-edit-form" onsubmit="return validateHuespedes()">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" id="maxHuespedesActual" value="@(ViewBag.MaxHuespedes)" />
+        <input type="hidden" id="tipoHabitacionActual" value="@(ViewBag.TipoHabitacion)" />
+        <input type="hidden" id="isAdmin" value="@(User.IsInRole("Administrador") ? "true" : "false")" />
+        <!-- Usuario -->
+        <div class="form-group">
+            @if (!User.IsInRole("Usuario"))
+            {
+                <div class="form-group">
+                    <label asp-for="UsuarioId" class="control-label"><i class="fas fa-user"></i> Usuario</label>
+                    @if (Model.Pagos.Any(p => p.Estado == "En Ejecucion") || !isAdmin)
+                    {
+                        <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"
+                            disabled="disabled"></select>
+                        <input type="hidden" asp-for="UsuarioId" />
+                    }
+                    else
+                    {
+                        <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                    }
+                    <span asp-validation-for="UsuarioId" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <input type="hidden" asp-for="UsuarioId" />
+            }
+            <span asp-validation-for="UsuarioId" class="text-danger"></span>
+        </div>
+        <!-- Habitación -->
+        <div class="form-group">
+            <label asp-for="HabitacionId" class="control-label"><i class="fas fa-bed"></i> Habitación</label>
+            @if (Model.Pagos.Any(p => p.Estado == "En Ejecucion") || !isAdmin)
+            {
+                <select asp-for="HabitacionId" class="form-control" asp-items="ViewBag.HabitacionId"
+                    disabled="disabled"></select>
+                <input type="hidden" asp-for="HabitacionId" />
+            }
+            else
+            {
+                <select asp-for="HabitacionId" class="form-control" asp-items="ViewBag.HabitacionId"></select>
+            }
+            <span asp-validation-for="HabitacionId" class="text-danger"></span>
+        </div>
+        <!-- Fecha Inicio -->
+        <div class="form-group">
+            <label asp-for="FechaInicio" class="control-label"><i class="fas fa-calendar-plus"></i> Fecha de
+                inicio</label>
+            @if (Model.Pagos.Any(p => p.Estado == "En Ejecucion" || p.Estado == "Por confirmar" || p.Estado ==
+            "Confirmado"))
+            {
+                <input asp-for="FechaInicio" class="form-control" type="text" id="FechaInicio" disabled="disabled" />
+                <input type="hidden" asp-for="FechaInicio" />
+            }
+            else
+            {
+                <input asp-for="FechaInicio" class="form-control" type="text" id="FechaInicio" />
+            }
+            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+        </div>
+        <!-- Fecha Fin -->
+        <div class="form-group">
+            <label asp-for="FechaFin" class="control-label"><i class="fas fa-calendar-minus"></i> Fecha de fin</label>
+            @if (Model.Pagos.Any(p => p.Estado == "En Ejecucion"))
+            {
+                @if (User.IsInRole("Administrador"))
+                {
+                    <input asp-for="FechaFin" class="form-control" type="text" id="FechaFin" />
+                }
+                else
+                {
+                    <input asp-for="FechaFin" class="form-control" type="text" id="FechaFin" disabled="disabled" />
+                    <input type="hidden" asp-for="FechaFin" />
+                }
+            }
+            else if (Model.Pagos.Any(p => p.Estado == "Por confirmar" || p.Estado == "Confirmado"))
+            {
+                <input asp-for="FechaFin" class="form-control" type="text" id="FechaFin" disabled="disabled" />
+                <input type="hidden" asp-for="FechaFin" />
+            }
+            else
+            {
+                <input asp-for="FechaFin" class="form-control" type="text" id="FechaFin" />
+            }
+            <span asp-validation-for="FechaFin" class="text-danger"></span>
+        </div>
+        <!-- Precio Total -->
+        <div class="form-group">
+            <label asp-for="PrecioTotal" class="control-label"><i class="fas fa-dollar-sign"></i> Total</label>
+            @{
+                var precioConIva = Model.PrecioTotal * 1.19m;
+                var numberFormat = new System.Globalization.CultureInfo("es-CO");
+            }
+            <div>
+                <small class="text-muted">Base: @Model.PrecioTotal.ToString("#,##0", numberFormat)</small>
+            </div>
+            <input type="hidden" asp-for="PrecioTotal" />
+            <input value="@precioConIva.ToString("#,##0", numberFormat)" class="form-control" readonly />
+            <small class="text-info">Incluye IVA del 19%</small>
+            <span asp-validation-for="PrecioTotal" class="text-danger"></span>
+        </div>
+
+        <!-- Huespedes -->
+        <div class="form-group">
+            <label class="control-label"><i class="fas fa-users"></i> Acompañantes</label>
+            <div id="huespedesContainer">
+                @for (int i = 0; i < Model.Huespedes.Count; i++)
+                {
+                    var huesped = Model.Huespedes.ToList()[i];
+                    <div class="huesped-item" data-index="@i">
+                        <input type="hidden" name="Huespedes[@i].Id" value="@huesped.Id" />
+                        <div class="form-group">
+                            <label><i class="fas fa-user-circle"></i> Nombre</label>
+                            <input type="text" name="Huespedes[@i].Nombre" class="form-control" value="@huesped.Nombre" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> Documento Identidad</label>
+                            <input type="text" name="Huespedes[@i].DocumentoIdentidad" class="form-control"
+                                value="@huesped.DocumentoIdentidad" />
+                        </div>
+                        <button type="button" class="btn btn-danger" onclick="confirmRemoveHuesped(this)">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                    </div>
+                }
+            </div>
+            <button type="button" class="btn btn-primary" onclick="addHuesped()">
+                <i class="fas fa-user-plus"></i> Agregar Acompañante
+            </button>
+        </div>
+
+        <!-- Fecha de Reserva -->
+        <div class="form-group">
+            <label asp-for="FechaReserva" class="control-label"><i class="fas fa-calendar-check"></i> Fecha de
+                reserva</label>
+            <input asp-for="FechaReserva" class="form-control" readonly />
+            <span asp-validation-for="FechaReserva" class="text-danger"></span>
+        </div>
+
+        <!-- Servicios Adicionales -->
+        <div class="form-group">
+            <label class="control-label"><i class="fas fa-concierge-bell"></i> Servicio Adicional</label>
+            @foreach (var item in ViewBag.ServicioAdicionalId)
+            {
+                var servicioId = Guid.Parse(item.Value);
+                var isChecked = Model.Servicios.Any(s => s.Id == servicioId);
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Servicios" value="@item.Value"
+                        id="servicio_@item.Value" @(isChecked ? "checked" : "")>
+                    <label class="form-check-label" for="servicio_@item.Value">
+                        <i class="fas fa-check-circle"></i> @item.Text
+                    </label>
+                </div>
+            }
+        </div>
+
+        <!-- Botones -->
+        <div class="form-group d-flex">
+            <button type="submit" class="btn btn-primary mr-2">
+                <i class="fas fa-save"></i> Guardar
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">
+                <i class="fas fa-times"></i> Cerrar
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="~/js/scriptReservas/editReserva.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

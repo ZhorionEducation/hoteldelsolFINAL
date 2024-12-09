@@ -1,0 +1,77 @@
+﻿@model Hotel.Models.Usuario
+
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<h3>¿Estás seguro de que deseas eliminar este usuario?</h3>
+<div>
+    <hr />
+    <table class="table table-bordered" style="width: 100%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Nombre de Usuario:</td>
+            <td>@Model.NombreUsuario</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Correo Electrónico:</td>
+            <td>@Model.CorreoElectronico</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Nombre:</td>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Apellido:</td>
+            <td>@Model.Apellido</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Teléfono:</td>
+            <td>@Model.Telefono</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Fecha de Nacimiento:</td>
+            <td>@Model.FechaNacimiento?.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Imagen de Perfil:</td>
+            <td>@Model.ImagenPerfil</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Fecha de Registro:</td>
+            <td>@Model.FechaRegistro?.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Estado:</td>
+            <td>@(Model.Activo ? "Activo" : "Inactivo")</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Género:</td>
+            <td>@Model.Genero?.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Rol:</td>
+            <td>@Model.Rol?.Nombre</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">
+            <i class="iconify" data-icon="mdi:delete" data-width="24" data-height="24"></i> 
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Index", "Usuarios")'">
+            <i class="iconify" data-icon="mdi:close" data-width="24" data-height="24"></i> 
+        </button>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

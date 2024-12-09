@@ -1,0 +1,295 @@
+﻿@model Hotel.Models.Reserva
+
+@{
+    ViewData["Title"] = "Crear Reserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/Flick/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/reservas.css">
+    <title>Reservar</title>
+</head>
+
+<body>
+    <div class="container-reserva">
+        <h1><i class="fa-solid fa-building"></i></h1>
+        <h4>Reservar</h4>
+        <hr />
+        <form id="reservaForm" asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                @if (User.IsInRole("Administrador"))
+                {
+                    <label asp-for="UsuarioId" class="control-label"><i class="fas fa-user"></i> Usuario</label>
+                    <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                }
+                else
+                {
+                    <label asp-for="UsuarioId" hidden class="control-label"><i class="fas fa-user"></i> Usuario</label>
+                    <select asp-for="UsuarioId" hidden class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                }
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label asp-for="HabitacionId" class="control-label">
+                        <i class="fas fa-bed"></i> Habitación 
+                            <div class="dropdown d-inline">
+                                <button class="btn btn-link btn-sm dropdown-toggle p-0" type="button" id="dropdownTipoHabitacion" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-filter text-primary"></i>
+                                </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownTipoHabitacion">
+                                    <li><a class="dropdown-item" href="#" data-tipo="">Todos los tipos</a></li>
+                                        @if (ViewBag.TiposHabitacion != null)
+                                        {
+                                        @foreach (var tipo in (SelectList)ViewBag.TiposHabitacion)
+                                            {
+                                                <li><a class="dropdown-item" href="#" data-tipo="@tipo.Text">@tipo.Text</a></li>
+                                            }
+                                        }
+                                    </ul>
+                            </div>
+                        </label>
+                            <select asp-for="HabitacionId" class="form-control" id="HabitacionId">
+                            <option value="">Seleccione habitación</option>
+                            @foreach (var item in (List<HabitacionSelectListItem>)ViewBag.HabitacionId)
+                            {
+                                if (item.Activo)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            }
+                            </select>
+                            <span asp-validation-for="HabitacionId" class="text-danger"></span>
+                            <p id="precioTotalPorDias" class="mt-2"></p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="NumeroAcompanantes" class="control-label">
+                        <i class="fas fa-users"></i>Acompañantes
+                        </label>
+                        <input asp-for="NumeroAcompanantes" class="form-control" type="number" id="numeroAcompanantes" />
+                        <span asp-validation-for="NumeroAcompanantes" class="text-danger"></span>
+                    </div>
+                </div>
+
+                
+
+                <label class="control-label">Servicio Adicional <i class="fas fa-plus"></i></label>
+                <div class="checkbox-container">
+                    <ul class="checkbox-list">
+                        @foreach (var item in ViewBag.ServiciosAdicionales)
+                        {
+                            if (item.Activo == true) // Verifica si el estado es activo
+                            {
+                            <li>
+                                <input class="form-check-input servicio-checkbox" type="checkbox" name="Servicios" value="@item.Id"
+                                    id="servicio_@item.Id" data-price="@item.Precio">
+                                <label class="form-check-label" for="servicio_@item.Id">@item.Nombre - $@item.Precio.ToString("N0")</label>
+                            </li>
+                            }
+                        }
+                    </ul>
+                </div>
+                    <div class="selected-items" id="selectedServicios">
+                    <h5>Servicios Seleccionados:</h5>
+
+                    <p><strong>Total de Servicios :</strong> <span id="totalServicios">0</span></p>
+                </div>
+
+                <label class="control-label">Comodidad de la habitación<i class="fas fa-plus"></i></label>
+                <div class="checkbox-container">
+                    <ul class="checkbox-list">
+                        @foreach (var item in ViewBag.ComodidadId)
+                        {
+                            <li>
+                                <input class="form-check-input" type="checkbox" name="Comodidades" value="@item.Value"
+                                    id="comodidad_@item.Value" disabled>
+                                <label class="form-check-label" for="comodidad_@item.Value">@item.Text</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="selected-items" id="selectedComodidades"></div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"><i class="fas fa-calendar-alt"></i> Fecha de
+                    inicio</label>
+                <input asp-for="FechaInicio" class="form-control" type="text" id="FechaInicio" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                <br />
+                <label asp-for="FechaFin" class="control-label"><i class="fas fa-calendar-alt"></i> Fecha de fin</label>
+                <input asp-for="FechaFin" class="form-control" type="text" id="FechaFin" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+
+                <br>
+                <!-- Precio Total sin IVA -->
+                <label asp-for="PrecioTotal" class="control-label">
+                    <i class="fas fa-dollar-sign"></i> Precio Total sin IVA
+                </label>
+                <input asp-for="PrecioTotal" hidden class="form-control" type="text" id="precioTotalSinIVA" readonly />
+                <span id="formattedPrecioSinIVA" class="text-primary"></span>
+                <span asp-validation-for="PrecioTotal" class="text-danger"></span>
+                <br>
+                <!-- Precio Total con IVA -->
+                <label asp-for="PrecioTotal" class="control-label">
+                    <i class="fas fa-dollar-sign"></i> Precio Total con IVA
+                </label>
+                <input asp-for="PrecioTotal" hidden class="form-control" type="text" id="precioTotalConIVA" readonly />
+                <span id="formattedPrecioConIVA" class="text-primary"></span>
+                <span asp-validation-for="PrecioTotal" class="text-danger"></span>
+                <br>
+                <br>
+                <div id="huespedesContainer"></div>
+            </div>
+
+            
+
+            <div class="form-group">
+                <button type="submit" name="submitButton" value="Pagar" class="btn btn-primary">
+                    Pagar o abonar
+                </button>
+                <button type="submit" name="submitButton" value="Guardar" class="btn btn-secondary">
+                    Guardar Reserva
+                </button>
+            </div>
+
+        </form>
+        @if (User.IsInRole("Administrador"))
+        {
+            <a asp-action="Index" class="back-link"><i class="btn btn-secondary"> Regresar a la lista</i></a>
+        }
+
+
+    </div>
+</body>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"
+        integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/localization/messages_es.min.js"
+        integrity="sha512-Kcb2OYCSBj5/343s73G4ue17xTxHhWeLwfzE8gDQh9EAbWyEt8Jh6cNgGt86XgjS0JRzIlARtVPLa+o57+HQ2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="~/js/scriptReservas/swiftAlertReserva.js"></script>
+    <script src="~/js/scriptReservas/reservaCreate.js"></script>
+
+
+    <script src="~/js/scriptReservas/huespedesReserva.js"></script>
+    <script>
+        $(document).ready(function () {
+    $('.dropdown-item').click(function (e) {
+        e.preventDefault();
+        var tipo = $(this).data('tipo');
+        
+        if (!tipo) {
+            // Show all rooms
+            $.ajax({
+                url: '@Url.Action("GetAllHabitaciones", "Reservas")',
+                type: 'GET',
+                success: function (data) {
+                    updateHabitacionesDropdown(data);
+                }
+            });
+        } else {
+            // Filter by type
+            $.ajax({
+                url: '@Url.Action("GetHabitacionesByTipo", "Reservas")',
+                type: 'GET',
+                data: { tipo: tipo },
+                success: function (data) {
+                    updateHabitacionesDropdown(data);
+                }
+            });
+        }
+    });
+
+    function updateHabitacionesDropdown(data) {
+        var $habitacion = $('#HabitacionId');
+        $habitacion.empty();
+        $habitacion.append('<option value="">Seleccione habitación</option>');
+        $.each(data, function (i, item) {
+            $habitacion.append('<option value="' + item.id + '">' + item.numeroHabitacion + '</option>');
+        });
+    }
+});
+    </script>
+    <script>
+    $(document).ready(function() {
+    function actualizarPrecioTotalPorDias() {
+        var habitacionId = $('#HabitacionId').val();
+        if (habitacionId) {
+            $.ajax({
+                url: '/Reservas/GetPrecioHabitacion',
+                type: 'GET',
+                data: { id: habitacionId },
+                success: function(precioHabitacion) {
+                    var precioHabitacionFloat = parseFloat(precioHabitacion);
+                    if (isNaN(precioHabitacionFloat)) {
+                        console.error("Precio de habitación inválido:", precioHabitacion);
+                        precioHabitacionFloat = 0;
+                    }
+                    var dias = calcularDias($('#FechaInicio').val(), $('#FechaFin').val());
+                    var precioTotalPorDias = precioHabitacionFloat * dias;
+                    $('#precioTotalPorDias').text('Precio de la habitación por ' + dias + ' días: $' + formatCurrency(precioTotalPorDias));
+                },
+                error: function() {
+                    console.error("Error al obtener el precio de la habitación:", habitacionId);
+                    $('#precioTotalPorDias').text('Error al obtener el precio de la habitación.');
+                }
+            });
+        } else {
+            $('#precioTotalPorDias').text('');
+        }
+    }
+
+    function calcularDias(fechaInicio, fechaFin) {
+        if (!fechaInicio || !fechaFin) {
+            return 1;
+        }
+
+        var inicio = new Date(fechaInicio);
+        var fin = new Date(fechaFin);
+
+        if (isNaN(inicio.getTime()) || isNaN(fin.getTime())) {
+            console.error("Fechas inválidas:", fechaInicio, fechaFin);
+            return 1;
+        }
+
+        inicio.setHours(12, 0, 0, 0);
+        fin.setHours(12, 0, 0, 0);
+
+        var diferencia = fin - inicio;
+        var dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+
+        return dias > 0 ? dias : 1;
+    }
+
+    function formatCurrency(value) {
+        return value.toFixed(0).replace(/\d(?=(\d{3})+$)/g, '$&.');
+    }
+
+    $('#HabitacionId').change(actualizarPrecioTotalPorDias);
+    $('#FechaInicio, #FechaFin').change(actualizarPrecioTotalPorDias);
+});
+    </script>
+    
+
+
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,81 @@
+﻿@model dynamic
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+</head>
+
+<link rel="stylesheet" href="~/css/Login/loginUsuarios.css">
+
+<body>
+    <div class="container-login"> <!-- Contenedor para centrar el formulario -->
+        <h2>Iniciar sesión</h2>
+
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre de usuario</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-key"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                @Html.ValidationSummary(false)
+            </div>
+        }
+
+        <!-- Opciones de inicio de sesión con redes sociales -->
+        <div class="social-login-options" style="padding-top: 20px;">
+            <a href="@Url.Action("ExternalLogin", "Usuarios", new { provider = "Google" })" class="btn btn-danger">
+                <i class="bi bi-google"></i> Google
+            </a>
+        </div>
+
+        <!-- Espacio para "Registrarme" debajo del formulario -->
+        <div class="form-group">
+            <a href="@Url.Action("Create", "Usuarios")" class="back-link">¿No tienes una cuenta? Registrarme</a>
+        </div>
+        <div>
+            <a href="@Url.Action("ResetPassword", "Usuarios")" class="back-link">Recuperar Contraseña</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function (e) {
+        const passwordInput = document.getElementById('contrasena');
+        const icon = this.querySelector('i');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('bi-eye');
+            icon.classList.add('bi-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('bi-eye-slash');
+            icon.classList.add('bi-eye');
+        }
+    });
+</script>

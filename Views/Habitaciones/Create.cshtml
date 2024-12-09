@@ -1,0 +1,239 @@
+﻿@model Hotel.Models.Habitacione
+
+@{
+    ViewData["Title"] = "Crear Habitación";
+}
+
+<link rel="stylesheet" href="~/css/Habitaciones/createHabitaciones.css">
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+        <div class="card-body">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div class="form-group mb-3">
+                    <label asp-for="NumeroHabitacion" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:door"></span> Número de Habitación</label>
+                    <input asp-for="NumeroHabitacion" class="form-control" maxlength="4"/>
+                    <span asp-validation-for="NumeroHabitacion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Descripcion" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:note-text"></span> Descripción</label>
+                    <textarea asp-for="Descripcion" class="form-control" rows="1" maxlength="255"></textarea>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Capacidad" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:account-group"></span> Capacidad</label>
+                    <input asp-for="Capacidad" type="number" class="form-control" readonly />
+                    <span asp-validation-for="Capacidad" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="TipoHabitacion" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:bed"></span> Tipo de Habitación</label>
+                    <select asp-for="TipoHabitacion" class="form-select" id="tipoHabitacion">
+                        <option value="">Seleccione un tipo</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Doble">Doble</option>
+                        <option value="Deluxe">Deluxe</option>
+                    </select>
+                    <span asp-validation-for="TipoHabitacion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="PrecioPorNoche" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:currency-usd"></span> Precio por Noche</label>
+                    <input asp-for="PrecioPorNoche" type="number" step="0.01" class="form-control" />
+                    <span asp-validation-for="PrecioPorNoche" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Activo" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:toggle-switch"></span> Estado</label>
+                    <select asp-for="Activo" class="form-select">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <span asp-validation-for="Activo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label">
+                        <span class="iconify icon" data-icon="mdi:sofa"></span> Comodidades
+                    </label>
+
+                    @* Hidden select for form submission *@
+                    <select name="Comodidades" id="comodidadesSelect" class="form-control d-none"
+                        asp-items="ViewBag.Comodidades" multiple="multiple">
+                    </select>
+
+                    @* Checkbox group with grid *@
+                    <div class="checkbox-group">
+                        @if (ViewBag.Comodidades != null)
+                        {
+                            var items = ((IEnumerable<SelectListItem>)ViewBag.Comodidades).ToList();
+                            for (int i = 0; i < items.Count; i += 3)
+                            {
+                                <div class="row g-3 mb-2">
+                                    @for (int j = i; j < Math.Min(i + 3, items.Count); j++)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input comodidad-checkbox" type="checkbox"
+                                                    value="@items[j].Value" id="check_@items[j].Value">
+                                                <label class="form-check-label" for="check_@items[j].Value">
+                                                    @items[j].Text
+                                                </label>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="imagen" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:image"></span> Subir Imagen
+                    </label>
+                    <input type="file" name="imagen" id="imagen" class="form-control" accept="image/*" required
+                        data-val="true" data-val-required="Por favor seleccione una imagen"
+                        title="Por favor seleccione una imagen" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="imagen"
+                        data-valmsg-replace="true"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("form").validate({
+                rules: {
+                    imagen: {
+                        required: true
+                    }
+                },
+                messages: {
+                    imagen: {
+                        required: "Por favor, sube una imagen."
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        // Sync checkboxes with hidden select
+        document.querySelectorAll('.comodidad-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const select = document.getElementById('comodidadesSelect');
+                const options = Array.from(select.options);
+
+                options.forEach(option => {
+                    if (option.value === this.value) {
+                        option.selected = this.checked;
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('tipoHabitacion').addEventListener('change', function () {
+            const capacidadInput = document.querySelector('[name="Capacidad"]');
+            switch (this.value) {
+                case 'Individual':
+                    capacidadInput.value = 2;
+                    break;
+                case 'Doble':
+                    capacidadInput.value = 3;
+                    break;
+                case 'Deluxe':
+                    capacidadInput.value = 6;
+                    break;
+                default:
+                    capacidadInput.value = '';
+            }
+        });
+    </script>
+    <script>
+        function validateFileSize(input) {
+            const file = input.files[0];
+            const maxSize = 5 * 1024 * 1024; // 1MB in bytes
+            if (file.size > maxSize) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El tamaño del archivo no debe exceder los 5MB.',
+                });
+                input.value = ""; // Clear the input
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+
+                if (!this.checkValidity()) {
+                    @* $(this).addClass('was-validated');   COLOR VERDE A VALIDACIONES*@
+                    return;
+                }
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success === false) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message,
+                                confirmButtonColor: '#3085d6'
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Éxito',
+                                text: 'Habitación creada correctamente.',
+                                confirmButtonColor: '#3085d6'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = '@Url.Action("Index", "Habitaciones")';
+                                }
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Ocurrió un error al procesar la solicitud.',
+                            confirmButtonColor: '#3085d6'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

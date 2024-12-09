@@ -1,0 +1,77 @@
+﻿@model Hotel.Models.ServiciosAdicionale
+
+@{
+    ViewData["Title"] = "Crear Servicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/servicios/createServicios.css">
+
+<div class="container-servicio">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+        <div class="card-body">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div class="form-group mb-3">
+                    <label asp-for="Nombre" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:tag"></span> Nombre del Servicio</label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Descripcion" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:note-text"></span> Descripción</label>
+                    <textarea asp-for="Descripcion" class="form-control" rows="1" maxlength="200"></textarea>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Precio" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:currency-usd"></span> Precio</label>
+                    <input asp-for="Precio" class="form-control" />
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+    <label for="imagen" class="control-label">Imagen</label>
+    <input type="file" 
+           name="imagen" 
+           id="imagen"
+           class="form-control" 
+           accept="image/*"
+           required
+           data-val="true"
+           data-val-required="Por favor seleccione una imagen"
+           title="Por favor seleccione una imagen" />
+    <span class="text-danger field-validation-valid" data-valmsg-for="imagen" data-valmsg-replace="true"></span>
+</div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Activo" class="form-label">
+                        <span class="iconify icon" data-icon="mdi:toggle-switch"></span> Estado</label>
+                    <div class="switch-container">
+                        
+                        <input type="checkbox" name="Activo" value="true" class="form-check-input" 
+                               @(Model?.Activo == true ? "checked" : "") />
+                        <label class="form-check-label" for="Activo">Activo</label>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

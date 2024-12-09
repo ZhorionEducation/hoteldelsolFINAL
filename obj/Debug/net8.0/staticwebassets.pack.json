@@ -1,0 +1,1689 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Hotel.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Hotel.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\AccessDenied.css",
+      "PackagePath": "staticwebassets\\css\\AccessDenied.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\CreateComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\CreateComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\DeleteComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\DeleteComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\ModalsGlobalComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\ModalsGlobalComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\detailsComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\detailsComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\indexComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\indexComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Comodidades\\modalsDatailsComodidades.css",
+      "PackagePath": "staticwebassets\\css\\Comodidades\\modalsDatailsComodidades.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Habitaciones\\createHabitaciones.css",
+      "PackagePath": "staticwebassets\\css\\Habitaciones\\createHabitaciones.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Habitaciones\\habitacionesIndex.css",
+      "PackagePath": "staticwebassets\\css\\Habitaciones\\habitacionesIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Habitaciones\\modalDetailsHabitaciones.css",
+      "PackagePath": "staticwebassets\\css\\Habitaciones\\modalDetailsHabitaciones.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Habitaciones\\modalEditHabitaciones.css",
+      "PackagePath": "staticwebassets\\css\\Habitaciones\\modalEditHabitaciones.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Habitaciones\\modalsGlobalHabitaciones.css",
+      "PackagePath": "staticwebassets\\css\\Habitaciones\\modalsGlobalHabitaciones.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Home\\privacy.css",
+      "PackagePath": "staticwebassets\\css\\Home\\privacy.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Home\\styleHomeNativo.css",
+      "PackagePath": "staticwebassets\\css\\Home\\styleHomeNativo.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Login\\loginUsuarios.css",
+      "PackagePath": "staticwebassets\\css\\Login\\loginUsuarios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\PermisoRol.css",
+      "PackagePath": "staticwebassets\\css\\PermisoRol.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\indexReserva.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\indexReserva.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\modalDetailsReservas.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\modalDetailsReservas.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\modalEditReservas.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\modalEditReservas.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\modalPaymentReserva.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\modalPaymentReserva.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\modalsGlobalReservas.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\modalsGlobalReservas.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Reservas\\pagos.css",
+      "PackagePath": "staticwebassets\\css\\Reservas\\pagos.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\CrearServicio.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\CrearServicio.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\IndexServicios.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\IndexServicios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\createServicios.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\createServicios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\modalDetailsServicios.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\modalDetailsServicios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\modalEditServicios.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\modalEditServicios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Servicios\\modalsGlobalServicios.css",
+      "PackagePath": "staticwebassets\\css\\Servicios\\modalsGlobalServicios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Usuarios\\editModalUsuarios.css",
+      "PackagePath": "staticwebassets\\css\\Usuarios\\editModalUsuarios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Usuarios\\indexUsuarios.css",
+      "PackagePath": "staticwebassets\\css\\Usuarios\\indexUsuarios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\Usuarios\\modalsGlobalUsuarios.css",
+      "PackagePath": "staticwebassets\\css\\Usuarios\\modalsGlobalUsuarios.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\bodyNativo.css",
+      "PackagePath": "staticwebassets\\css\\bodyNativo.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\deleteReserva.css",
+      "PackagePath": "staticwebassets\\css\\deleteReserva.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\detallesReserva.css",
+      "PackagePath": "staticwebassets\\css\\detallesReserva.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\editReserva.css",
+      "PackagePath": "staticwebassets\\css\\editReserva.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\css\\flaticon.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\gijgo.css",
+      "PackagePath": "staticwebassets\\css\\gijgo.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\navNativo.css",
+      "PackagePath": "staticwebassets\\css\\navNativo.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\css\\nice-select.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\registro.css",
+      "PackagePath": "staticwebassets\\css\\registro.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\reservas.css",
+      "PackagePath": "staticwebassets\\css\\reservas.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\resetPassword.css",
+      "PackagePath": "staticwebassets\\css\\resetPassword.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\sidenav.css",
+      "PackagePath": "staticwebassets\\css\\sidenav.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\slicknav.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\style organizado.css",
+      "PackagePath": "staticwebassets\\css\\style organizado.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\style.map",
+      "PackagePath": "staticwebassets\\css\\style.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\theme-default.css",
+      "PackagePath": "staticwebassets\\css\\theme-default.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\theme-default.map",
+      "PackagePath": "staticwebassets\\css\\theme-default.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\css\\themify-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\flaticon.css",
+      "PackagePath": "staticwebassets\\fonts\\flaticon.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\gijgo-material.eot",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\gijgo-material.svg",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\gijgo-material.ttf",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\gijgo-material.woff",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\fonts\\themify.eot"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\fonts\\themify.svg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\Login\\login.jpg",
+      "PackagePath": "staticwebassets\\img\\Login\\login.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\PermisoRol\\hotel-background.jpg",
+      "PackagePath": "staticwebassets\\img\\PermisoRol\\hotel-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\Reserva\\delete.jpg",
+      "PackagePath": "staticwebassets\\img\\Reserva\\delete.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\Reserva\\detalles.jpg",
+      "PackagePath": "staticwebassets\\img\\Reserva\\detalles.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\Reserva\\edit.jpg",
+      "PackagePath": "staticwebassets\\img\\Reserva\\edit.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\Reserva\\index1.jpg",
+      "PackagePath": "staticwebassets\\img\\Reserva\\index1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\about\\1.png",
+      "PackagePath": "staticwebassets\\img\\about\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\about\\2.png",
+      "PackagePath": "staticwebassets\\img\\about\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\about\\about_1.png",
+      "PackagePath": "staticwebassets\\img\\about\\about_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\about\\about_2.png",
+      "PackagePath": "staticwebassets\\img\\about\\about_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\about_banner.png",
+      "PackagePath": "staticwebassets\\img\\banner\\about_banner.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\banner.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\banner2.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\bradcam.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\bradcam2.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\banner\\bradcam3.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\author.png",
+      "PackagePath": "staticwebassets\\img\\blog\\author.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\blog_1.png",
+      "PackagePath": "staticwebassets\\img\\blog\\blog_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\blog_2.png",
+      "PackagePath": "staticwebassets\\img\\blog\\blog_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\blog_3.png",
+      "PackagePath": "staticwebassets\\img\\blog\\blog_3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\blog_4.png",
+      "PackagePath": "staticwebassets\\img\\blog\\blog_4.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\learn_about_bg.png",
+      "PackagePath": "staticwebassets\\img\\blog\\learn_about_bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\single_blog_1.png",
+      "PackagePath": "staticwebassets\\img\\blog\\single_blog_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\single_blog_2.png",
+      "PackagePath": "staticwebassets\\img\\blog\\single_blog_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\single_blog_3.png",
+      "PackagePath": "staticwebassets\\img\\blog\\single_blog_3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\single_blog_4.png",
+      "PackagePath": "staticwebassets\\img\\blog\\single_blog_4.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\single_blog_5.png",
+      "PackagePath": "staticwebassets\\img\\blog\\single_blog_5.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\blog\\slide_thumb_1.png",
+      "PackagePath": "staticwebassets\\img\\blog\\slide_thumb_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\codigoqr\\bancolombia.png",
+      "PackagePath": "staticwebassets\\img\\codigoqr\\bancolombia.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\codigoqr\\nequi.png",
+      "PackagePath": "staticwebassets\\img\\codigoqr\\nequi.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\codigoqr\\ppal.png",
+      "PackagePath": "staticwebassets\\img\\codigoqr\\ppal.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comment\\comment_1.png",
+      "PackagePath": "staticwebassets\\img\\comment\\comment_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comment\\comment_2.png",
+      "PackagePath": "staticwebassets\\img\\comment\\comment_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comment\\comment_3.png",
+      "PackagePath": "staticwebassets\\img\\comment\\comment_3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comodidades\\aireacondicionado.jpg",
+      "PackagePath": "staticwebassets\\img\\comodidades\\aireacondicionado.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comodidades\\crear.jpg",
+      "PackagePath": "staticwebassets\\img\\comodidades\\crear.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comodidades\\nevera.jpg",
+      "PackagePath": "staticwebassets\\img\\comodidades\\nevera.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comodidades\\televisor.jpg",
+      "PackagePath": "staticwebassets\\img\\comodidades\\televisor.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\04095f9d-a554-45f2-9654-a3505461d8c1.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\04095f9d-a554-45f2-9654-a3505461d8c1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\0dd1e887-977e-488e-87ed-0cb14f4ed35c.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\0dd1e887-977e-488e-87ed-0cb14f4ed35c.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\0ddcb6e0-b3ce-4e38-b6bd-a19ad3805f79.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\0ddcb6e0-b3ce-4e38-b6bd-a19ad3805f79.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\1212010c-6424-4175-a1c2-cd18467b20c7.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\1212010c-6424-4175-a1c2-cd18467b20c7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\15690b84-13a2-4f1d-996f-6986fdbcf11d.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\15690b84-13a2-4f1d-996f-6986fdbcf11d.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\18277453-b4f5-40ef-b711-91851d194428.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\18277453-b4f5-40ef-b711-91851d194428.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\283bc346-3bdc-47ff-9ee8-f45ba4ffa9c5.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\283bc346-3bdc-47ff-9ee8-f45ba4ffa9c5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\2ebc544e-a84d-4d76-8acd-e86d3b083f39.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\2ebc544e-a84d-4d76-8acd-e86d3b083f39.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\31f41d9c-2324-4c89-ac36-d1cfc889b360.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\31f41d9c-2324-4c89-ac36-d1cfc889b360.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\3423a615-893c-45b2-9620-caad0aa0753a.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\3423a615-893c-45b2-9620-caad0aa0753a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\3a060650-3e8c-485b-8e2d-5977fb9051ff.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\3a060650-3e8c-485b-8e2d-5977fb9051ff.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\3b6ee972-97fe-4e17-afa1-5cd0b015840c.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\3b6ee972-97fe-4e17-afa1-5cd0b015840c.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\3f95dbca-f56e-4003-963b-98a3aed03877.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\3f95dbca-f56e-4003-963b-98a3aed03877.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\416c40b7-ed1a-4ccc-9ea5-3c79895c6a70.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\416c40b7-ed1a-4ccc-9ea5-3c79895c6a70.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\46de3178-1cd3-4576-8798-27c795fd1f08.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\46de3178-1cd3-4576-8798-27c795fd1f08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\488e5427-5380-44fc-ade2-8d31ab11a8f9.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\488e5427-5380-44fc-ade2-8d31ab11a8f9.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\49c0ddf2-14f2-4072-856f-1f796be921af.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\49c0ddf2-14f2-4072-856f-1f796be921af.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\49d7f3f6-76c8-430a-93b6-ef7b21e6e1e1.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\49d7f3f6-76c8-430a-93b6-ef7b21e6e1e1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\4aae5c26-5a1b-406f-bdad-820f62cea89d.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\4aae5c26-5a1b-406f-bdad-820f62cea89d.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\4c5a3a1d-8883-493b-a9b8-1c71173091e8.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\4c5a3a1d-8883-493b-a9b8-1c71173091e8.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\512cbf46-059c-43ca-9f62-862a999e2f74.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\512cbf46-059c-43ca-9f62-862a999e2f74.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\5604ed95-a32c-4292-a935-15c74e94a03f.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\5604ed95-a32c-4292-a935-15c74e94a03f.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\59118c2c-2cd9-4bbe-86f3-3968a3f24d83.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\59118c2c-2cd9-4bbe-86f3-3968a3f24d83.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\61d17853-9cd6-48d3-a89e-73a0cc2d3697.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\61d17853-9cd6-48d3-a89e-73a0cc2d3697.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\66ddb3c4-34cb-4d96-87c1-e0301d9516a1.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\66ddb3c4-34cb-4d96-87c1-e0301d9516a1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\6b35e519-83b3-4eb7-b313-66b156c0614e.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\6b35e519-83b3-4eb7-b313-66b156c0614e.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\6c3e679e-9baf-4d15-80cc-d81ca6f198d0.gif",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\6c3e679e-9baf-4d15-80cc-d81ca6f198d0.gif"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\6c4c94ea-3780-4442-8e87-a423828ecdee.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\6c4c94ea-3780-4442-8e87-a423828ecdee.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\705ad5a2-989c-4a98-8a08-c3d0745f20b0.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\705ad5a2-989c-4a98-8a08-c3d0745f20b0.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\726668fd-f98d-4d74-adae-ae9dc07dcd88.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\726668fd-f98d-4d74-adae-ae9dc07dcd88.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\74116879-a24f-4354-b37f-bfe7f5d43bfb.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\74116879-a24f-4354-b37f-bfe7f5d43bfb.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\80324e38-be75-4f83-a20d-710ac8f31cdb.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\80324e38-be75-4f83-a20d-710ac8f31cdb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\940f4b1a-015e-47b5-ad69-db1e46470cb6.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\940f4b1a-015e-47b5-ad69-db1e46470cb6.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\96f51337-4e2d-44fa-aa6d-e98161511503.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\96f51337-4e2d-44fa-aa6d-e98161511503.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\9c0866b5-65af-48d8-9cf2-a908dd82ba2c.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\9c0866b5-65af-48d8-9cf2-a908dd82ba2c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\9d4969cf-91a7-4b9b-87f1-9f8ab24594b6.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\9d4969cf-91a7-4b9b-87f1-9f8ab24594b6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\a3ea11a4-92d1-49f1-9c09-66bac2ebb71c.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\a3ea11a4-92d1-49f1-9c09-66bac2ebb71c.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\a6e31a59-910d-4fc6-a5db-5bb89f3cccba.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\a6e31a59-910d-4fc6-a5db-5bb89f3cccba.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\a77c137b-8c3b-40a7-a8f0-3469abc8782f.webp",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\a77c137b-8c3b-40a7-a8f0-3469abc8782f.webp"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\ac14252e-a988-4bef-ba42-bd4b631f6abf.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\ac14252e-a988-4bef-ba42-bd4b631f6abf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\ad49f56b-0bde-4573-9011-615c5824f14a.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\ad49f56b-0bde-4573-9011-615c5824f14a.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\af640b70-6cd1-4c11-b00e-da063ba54d86.webp",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\af640b70-6cd1-4c11-b00e-da063ba54d86.webp"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\b0be6e82-d9a5-46b3-a3f2-bcb4bc783874.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\b0be6e82-d9a5-46b3-a3f2-bcb4bc783874.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\b465d730-d59c-408e-8125-63979ce7118f.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\b465d730-d59c-408e-8125-63979ce7118f.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\b7be09d5-0d2d-42cc-bf13-753353a831fe.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\b7be09d5-0d2d-42cc-bf13-753353a831fe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\bcdd94fe-ca18-4281-8c79-45a01c8c88bc.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\bcdd94fe-ca18-4281-8c79-45a01c8c88bc.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\bfee1910-b3e0-4c54-8a9a-b282bc197ee7.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\bfee1910-b3e0-4c54-8a9a-b282bc197ee7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\c1996f6d-5822-4ea8-b89f-2d98fb73f230.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\c1996f6d-5822-4ea8-b89f-2d98fb73f230.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\c25ce874-f43b-4f99-86dd-43d36bcea79e.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\c25ce874-f43b-4f99-86dd-43d36bcea79e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\c5146c63-8173-4fae-ad8a-6d088c93f49c.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\c5146c63-8173-4fae-ad8a-6d088c93f49c.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\c70a14e7-2144-4e40-b930-a7fcf4757656.webp",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\c70a14e7-2144-4e40-b930-a7fcf4757656.webp"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\c759e904-7bb5-425d-9f1f-ecf0e630a27e.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\c759e904-7bb5-425d-9f1f-ecf0e630a27e.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\cd9352d9-215f-43df-bdae-da8af382f939.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\cd9352d9-215f-43df-bdae-da8af382f939.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\d051904f-4fc0-4fbd-a3db-7eca0ed0384b.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\d051904f-4fc0-4fbd-a3db-7eca0ed0384b.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\d128ce43-6937-45a6-8739-7af409f8b906.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\d128ce43-6937-45a6-8739-7af409f8b906.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\d43fb799-f8d2-431b-ad06-30ea6e979abc.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\d43fb799-f8d2-431b-ad06-30ea6e979abc.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\d6197bc4-5e4c-47fb-a2b1-cadc652e1241.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\d6197bc4-5e4c-47fb-a2b1-cadc652e1241.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\db90abf6-8543-4bff-b6cb-7d43dd867c88.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\db90abf6-8543-4bff-b6cb-7d43dd867c88.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\dbee73df-9529-4f3f-9d53-3ae8fa2da8a7.PNG",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\dbee73df-9529-4f3f-9d53-3ae8fa2da8a7.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\e8a37e7f-0f87-425e-a231-e4d6e9ea1d5e.PNG",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\e8a37e7f-0f87-425e-a231-e4d6e9ea1d5e.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\ebedb9c6-0814-41a5-a1d7-697e58537628.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\ebedb9c6-0814-41a5-a1d7-697e58537628.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\f33ff019-0142-45c6-8977-060f5ef3ab88.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\f33ff019-0142-45c6-8977-060f5ef3ab88.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\f3d42082-d265-4b47-95a9-494e200c3f1d.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\f3d42082-d265-4b47-95a9-494e200c3f1d.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\f872f170-5194-4298-9f83-05a5949ff47c.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\f872f170-5194-4298-9f83-05a5949ff47c.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\f9a44bff-47ac-47cd-9e00-76dcb08c3dc6.png",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\f9a44bff-47ac-47cd-9e00-76dcb08c3dc6.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\fa0537d0-2959-47fb-8966-9a1ed39eeff8.jpeg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\fa0537d0-2959-47fb-8966-9a1ed39eeff8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\comprobantes\\fa566621-eed8-4029-a168-c6c0216eff97.jpg",
+      "PackagePath": "staticwebassets\\img\\comprobantes\\fa566621-eed8-4029-a168-c6c0216eff97.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\crear.jpg",
+      "PackagePath": "staticwebassets\\img\\crear.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\de10336a-b2d3-467b-aeff-36f15e9e3c4c_lujo.jpg",
+      "PackagePath": "staticwebassets\\img\\de10336a-b2d3-467b-aeff-36f15e9e3c4c_lujo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\a.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\a2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\a2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\d.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\disabled-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\disabled-check.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\disabled-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\disabled-radio.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f1.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f3.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f4.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f5.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f6.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f7.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\f8.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g1.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g3.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g4.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g5.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g6.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g7.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\g8.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\primary-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\primary-check.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\primary-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\primary-radio.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\success-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\success-check.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\elements\\success-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\success-radio.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\footer-logo.png",
+      "PackagePath": "staticwebassets\\img\\footer-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\08112978-5ffb-4369-be47-1703fb92f065_individual2.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\08112978-5ffb-4369-be47-1703fb92f065_individual2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\0e354050-3192-4d64-bc10-d6fd3c3db984_Designer (1).jpeg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\0e354050-3192-4d64-bc10-d6fd3c3db984_Designer (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\15a59ed4-400b-4cda-9068-2d05c901ffc0_deluxe1.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\15a59ed4-400b-4cda-9068-2d05c901ffc0_deluxe1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\1e740b99-aeb4-400a-aa99-72eb92574fff_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\1e740b99-aeb4-400a-aa99-72eb92574fff_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\31b25f04-6a2c-4758-87c1-4c49f981c66c_Habitación 602.jpeg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\31b25f04-6a2c-4758-87c1-4c49f981c66c_Habitación 602.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\48e9ff73-cb59-4b5a-8549-873d58ec028d_Designer (3).jpeg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\48e9ff73-cb59-4b5a-8549-873d58ec028d_Designer (3).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\50efff93-a09f-4e4e-aee9-4242c7937978_Designer.jpeg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\50efff93-a09f-4e4e-aee9-4242c7937978_Designer.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\577f8689-6296-49bb-a523-b50c186e2606_Leonardo_Phoenix_A_brilliantly_shining_sun_obscured_by_a_fluff_0.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\577f8689-6296-49bb-a523-b50c186e2606_Leonardo_Phoenix_A_brilliantly_shining_sun_obscured_by_a_fluff_0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\600c9953-c9ed-4d3b-bba6-3f00051b8a81_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\600c9953-c9ed-4d3b-bba6-3f00051b8a81_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\70623095-5604-497b-96dd-fa19261593db_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\70623095-5604-497b-96dd-fa19261593db_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\7b0951c9-1f3a-41ec-bc35-06f67b613dcb_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\7b0951c9-1f3a-41ec-bc35-06f67b613dcb_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\8e1c2500-4fd1-42ea-9f0f-940255fcf0ea_Diagrama de clases (1).jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\8e1c2500-4fd1-42ea-9f0f-940255fcf0ea_Diagrama de clases (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\90701730-c418-472d-b57a-dafc0e1d060f_Habitación 601.jpeg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\90701730-c418-472d-b57a-dafc0e1d060f_Habitación 601.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\936d2c80-ecb9-49f0-90eb-ace5232e9bb9_Diseño sin título.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\936d2c80-ecb9-49f0-90eb-ace5232e9bb9_Diseño sin título.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\94337073-3a18-488f-a539-e0be55b5e593_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\94337073-3a18-488f-a539-e0be55b5e593_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\9496db38-4837-496c-a661-3254c2ab587e_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\9496db38-4837-496c-a661-3254c2ab587e_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\951ae7e9-ccb9-4075-a343-37e3957f0416_doble2.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\951ae7e9-ccb9-4075-a343-37e3957f0416_doble2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\a3245831-86c4-484e-ab3c-168d143bd987_mantenimiento.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\a3245831-86c4-484e-ab3c-168d143bd987_mantenimiento.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\a8f83741-c1cd-48d2-ba74-548f72027c3d_deluxe2.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\a8f83741-c1cd-48d2-ba74-548f72027c3d_deluxe2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\ab9a7046-0db1-457b-9f79-6e87e4212230_Diseño sin título.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\ab9a7046-0db1-457b-9f79-6e87e4212230_Diseño sin título.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\bba4b41e-1588-4434-9fd3-389505615cd1_body.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\bba4b41e-1588-4434-9fd3-389505615cd1_body.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\c8a94faa-15df-4579-b8fd-af0ac2366a96_doble1.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\c8a94faa-15df-4579-b8fd-af0ac2366a96_doble1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\d063495c-7936-4e51-bc59-6da8e74ac5da_invidual1.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\d063495c-7936-4e51-bc59-6da8e74ac5da_invidual1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\f0cd73e3-feef-4eed-862d-9291da4100c1_Listar reservas CASO DE USO.png",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\f0cd73e3-feef-4eed-862d-9291da4100c1_Listar reservas CASO DE USO.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\habitaciones\\index.jpg",
+      "PackagePath": "staticwebassets\\img\\habitaciones\\index.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\instragram\\1.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\instragram\\2.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\instragram\\3.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\instragram\\4.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\instragram\\5.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\logo-hotel.png",
+      "PackagePath": "staticwebassets\\img\\logo-hotel.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\mantenimiento.jpg",
+      "PackagePath": "staticwebassets\\img\\mantenimiento.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\offers\\1.png",
+      "PackagePath": "staticwebassets\\img\\offers\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\offers\\2.png",
+      "PackagePath": "staticwebassets\\img\\offers\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\offers\\3.png",
+      "PackagePath": "staticwebassets\\img\\offers\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\next.png",
+      "PackagePath": "staticwebassets\\img\\post\\next.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_1.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_10.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_10.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_2.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_3.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_4.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_4.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_5.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_5.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_6.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_6.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_7.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_7.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_8.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_8.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\post_9.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_9.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\post\\preview.png",
+      "PackagePath": "staticwebassets\\img\\post\\preview.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\reservaCreate\\fondoReserva.jpg",
+      "PackagePath": "staticwebassets\\img\\reservaCreate\\fondoReserva.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\reservaCreate\\fondoReserva1.jpg",
+      "PackagePath": "staticwebassets\\img\\reservaCreate\\fondoReserva1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\rooms\\1.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\rooms\\2.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\rooms\\3.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\rooms\\4.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\0778b0df-0fcd-4cbc-b6cd-d21edccf1692_premium_photo-1708589337397-ad21d307bb9c.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\0778b0df-0fcd-4cbc-b6cd-d21edccf1692_premium_photo-1708589337397-ad21d307bb9c.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\2164d5cf-902c-447c-ad4a-f913fcafe909_zona-juegos-interior-moderna-colorida-ninos-zona-juegos-interior-ninos-toboganes-entretenimiento-ninos_571748-1458.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\2164d5cf-902c-447c-ad4a-f913fcafe909_zona-juegos-interior-moderna-colorida-ninos-zona-juegos-interior-ninos-toboganes-entretenimiento-ninos_571748-1458.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\24504a4a-9a30-42dd-98e6-0885ef9e7091_3d-render-of-cafe-restaurant-interior.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\24504a4a-9a30-42dd-98e6-0885ef9e7091_3d-render-of-cafe-restaurant-interior.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\4b371048-41b4-4a50-9321-09f079db435a_servicio-a-la-habitaciC3B3n.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\4b371048-41b4-4a50-9321-09f079db435a_servicio-a-la-habitaciC3B3n.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\6ec98fff-eaa7-498e-9cda-3346c20e79f4_desayuno-saludable-a-base-de-huevos-revueltos-queso-jamC3B3n-cafC3A9-croissants-y-zumo-de-frutas.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\6ec98fff-eaa7-498e-9cda-3346c20e79f4_desayuno-saludable-a-base-de-huevos-revueltos-queso-jamC3B3n-cafC3A9-croissants-y-zumo-de-frutas.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\805c2517-ceb0-49e3-be3d-509daf825e2d_piscina-budapest-1568279301.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\805c2517-ceb0-49e3-be3d-509daf825e2d_piscina-budapest-1568279301.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\951d7963-8768-493b-881a-35f2b375e88b_el-estacionamiento.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\951d7963-8768-493b-881a-35f2b375e88b_el-estacionamiento.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\a0e4bb56-e339-4481-9677-6f2a7dac13f9_Novotel-Shanghai-Clover-Star-Trac.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\a0e4bb56-e339-4481-9677-6f2a7dac13f9_Novotel-Shanghai-Clover-Star-Trac.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\bccaaa5a-807b-4445-a149-f9594fc5cd38_premium_photo-1661662917928-b1a42a08d094.png",
+      "PackagePath": "staticwebassets\\img\\servicios\\bccaaa5a-807b-4445-a149-f9594fc5cd38_premium_photo-1661662917928-b1a42a08d094.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\crear.jpg",
+      "PackagePath": "staticwebassets\\img\\servicios\\crear.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\piscina.jpg",
+      "PackagePath": "staticwebassets\\img\\servicios\\piscina.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\servicios\\servicioaeropuerto.jpg",
+      "PackagePath": "staticwebassets\\img\\servicios\\servicioaeropuerto.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\usuarios\\Confirmation.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\Confirmation.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\usuarios\\Count.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\Count.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\usuarios\\index.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\index.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\usuarios\\link.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\link.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\usuarios\\recover.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\recover.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\img\\video\\video.png",
+      "PackagePath": "staticwebassets\\img\\video\\video.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\ajax-form.js",
+      "PackagePath": "staticwebassets\\js\\ajax-form.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\gijgo.min.js",
+      "PackagePath": "staticwebassets\\js\\gijgo.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\js\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\js\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.ajaxchimp.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.ajaxchimp.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.form.js",
+      "PackagePath": "staticwebassets\\js\\jquery.form.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.scrollUp.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.scrollUp.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\mail-script.js",
+      "PackagePath": "staticwebassets\\js\\mail-script.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\nice-select.min.js",
+      "PackagePath": "staticwebassets\\js\\nice-select.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\registro.js",
+      "PackagePath": "staticwebassets\\js\\registro.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptComodidades\\indexComodidades.js",
+      "PackagePath": "staticwebassets\\js\\scriptComodidades\\indexComodidades.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptHabitaciones\\indexHabitaciones.js",
+      "PackagePath": "staticwebassets\\js\\scriptHabitaciones\\indexHabitaciones.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptHome\\scriptHome.js",
+      "PackagePath": "staticwebassets\\js\\scriptHome\\scriptHome.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptPermisoRol\\permisoRol.js",
+      "PackagePath": "staticwebassets\\js\\scriptPermisoRol\\permisoRol.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\editReserva.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\editReserva.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\huespedesReserva.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\huespedesReserva.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\indexReserva.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\indexReserva.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\messages.es-es.min.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\messages.es-es.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\reservaCreate.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\reservaCreate.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\swiftAlertPago.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\swiftAlertPago.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptReservas\\swiftAlertReserva.js",
+      "PackagePath": "staticwebassets\\js\\scriptReservas\\swiftAlertReserva.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptServicios\\indexServicios.js",
+      "PackagePath": "staticwebassets\\js\\scriptServicios\\indexServicios.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptSideNav\\sideNav.js",
+      "PackagePath": "staticwebassets\\js\\scriptSideNav\\sideNav.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scriptUsuarios\\indexUsuarios.js",
+      "PackagePath": "staticwebassets\\js\\scriptUsuarios\\indexUsuarios.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\scrollIt.js",
+      "PackagePath": "staticwebassets\\js\\scrollIt.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\vendor\\jquery-1.12.4.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\jquery-1.12.4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\vendor\\modernizr-3.5.0.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\modernizr-3.5.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\js\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\manuals\\manual.pdf",
+      "PackagePath": "staticwebassets\\manuals\\manual.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_about.scss",
+      "PackagePath": "staticwebassets\\scss\\_about.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_blog.scss",
+      "PackagePath": "staticwebassets\\scss\\_blog.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_blog_part.scss",
+      "PackagePath": "staticwebassets\\scss\\_blog_part.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_bradcam.scss",
+      "PackagePath": "staticwebassets\\scss\\_bradcam.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_btn.scss",
+      "PackagePath": "staticwebassets\\scss\\_btn.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_contact.scss",
+      "PackagePath": "staticwebassets\\scss\\_contact.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_elements.scss",
+      "PackagePath": "staticwebassets\\scss\\_elements.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_extend.scss",
+      "PackagePath": "staticwebassets\\scss\\_extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\scss\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_header.scss",
+      "PackagePath": "staticwebassets\\scss\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_offers.scss",
+      "PackagePath": "staticwebassets\\scss\\_offers.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_responsive.scss",
+      "PackagePath": "staticwebassets\\scss\\_responsive.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_section_title.scss",
+      "PackagePath": "staticwebassets\\scss\\_section_title.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_slick-nav.scss",
+      "PackagePath": "staticwebassets\\scss\\_slick-nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_slider.scss",
+      "PackagePath": "staticwebassets\\scss\\_slider.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\_varriable.scss",
+      "PackagePath": "staticwebassets\\scss\\_varriable.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\scss\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\Hotel2.0\\hoteldelsolFINAL\\wwwroot\\scss\\theme-default.scss",
+      "PackagePath": "staticwebassets\\scss\\theme-default.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Hotel.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Hotel.props",
+      "PackagePath": "build\\Hotel.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Hotel.props",
+      "PackagePath": "buildMultiTargeting\\Hotel.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Hotel.props",
+      "PackagePath": "buildTransitive\\Hotel.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

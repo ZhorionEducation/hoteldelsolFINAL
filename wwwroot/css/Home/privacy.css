@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container-privacy {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Encabezados */
+.container-privacy h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.container-privacy h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Párrafos */
+.container-privacy p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Listas */
+.container-privacy ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.container-privacy ul li {
+    margin-bottom: 10px;
+}
+
+/* Información de contacto */
+.contact-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info strong {
+    font-size: 1.2em;
+}
+
+/* Enlaces */
+.container-privacy a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.container-privacy a:hover {
+    text-decoration: underline;
+}

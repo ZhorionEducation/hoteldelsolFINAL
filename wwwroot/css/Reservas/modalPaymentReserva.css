@@ -1,0 +1,31 @@
+.comprobante-thumbnail {
+    max-width: 100px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.comprobante-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.full-image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+.full-image {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

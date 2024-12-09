@@ -1,0 +1,86 @@
+﻿@model Hotel.Models.Habitacione
+
+<div id="detailsContainer">
+    <h4><i class="fas fa-info-circle"></i> Detalles de la Habitación</h4>
+    <hr />
+    <table class="table table-bordered" style="width: 100%;">
+        <tr hidden>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-id-badge"></i> ID de Habitación:</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-door-closed"></i> Número de Habitación:</td>
+            <td>@Model.NumeroHabitacion</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-align-left"></i> Descripción:</td>
+            <td>
+                @if (string.IsNullOrEmpty(Model.Descripcion))
+                {
+                    <span>No hay descripción disponible</span>
+                }
+                else
+                {
+                    @Model.Descripcion
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-door-closed"></i> Tipo de Habitación:</td>
+            <td>@Model.TipoHabitacion</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-users"></i> Capacidad:</td>
+            <td>@Model.Capacidad</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-dollar-sign"></i> Precio por Noche:</td>
+            <td>$@Model.PrecioPorNoche.ToString("#,0", new System.Globalization.CultureInfo("es-CO"))</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-image"></i> Imagen:</td>
+            <td>
+                @if (!string.IsNullOrEmpty(Model.Imagen))
+                {
+                    <img src="~/img/habitaciones/@Model.Imagen" alt="Imagen de la habitación"
+                        class="img-thumbnail comprobante-thumbnail" onclick="showFullImage(this.src)" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-info-circle"></i> Estado:</td>
+            <td>
+                <div class="form-check form-switch switch-lg">
+                    <input class="form-check-input" type="checkbox" id="switch-@Model.Id" @(Model.Activo ?? false ?
+                        "checked" : "") disabled>
+                    <label class="form-check-label" for="switch-@Model.Id">@((Model.Activo ?? false) ? "Activo" :
+                        "Inactivo")</label>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 30%; font-weight: bold;"><i class="fas fa-couch"></i> Comodidades:</td>
+            <td>
+                <ul>
+                    @foreach (var comodidad in Model.Comodidades)
+                    {
+                        <li>@comodidad.Nombre</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" id="buttonEdit" onclick="loadEditForm('@Model.Id')">
+        <i class="fas fa-edit"></i> Editar
+    </button>
+    <button type="button" class="btn btn-secondary buttonClose" onclick="closeDetailsModal()">
+        <i class="fas fa-times"></i> Cerrar
+    </button>
+</div>
+
+@section Scripts {
+    <script src="~/js/scriptHabitaciones/indexHabitaciones.js"></script>
+}

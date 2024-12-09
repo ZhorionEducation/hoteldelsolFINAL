@@ -1,0 +1,34 @@
+﻿@model Hotel.ViewModels.RoleDetailsViewModel
+
+<div>
+    <h3>Detalles del Rol</h3>
+
+    <table class="table table-bordered" style="width: 50%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Nombre del Rol:</td>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Cantidad de Usuarios:</td>
+            <td>@Model.CantidadUsuarios</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Usuarios con este Rol:</td>
+            <td>
+                @if (Model.NombresUsuarios != null && Model.NombresUsuarios.Any())
+                {
+                    <ul>
+                        @foreach (var nombre in Model.NombresUsuarios)
+                        {
+                            <li>@nombre</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>No hay usuarios asignados a este rol</span>
+                }
+            </td>
+        </tr>
+    </table>
+</div>

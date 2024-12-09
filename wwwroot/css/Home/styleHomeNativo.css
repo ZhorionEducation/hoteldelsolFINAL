@@ -1,0 +1,284 @@
+
+html {
+    scroll-behavior: smooth;
+}
+.room_heading_inner {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    color: white; /* Color del texto blanco */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+#Servicios {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px; /* Ajusta según sea necesario */
+    padding-bottom: 20px; /* Ajusta según sea necesario */
+}
+
+.about_area {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.single_offers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-item {
+    
+    width: 1000px !important;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    border-radius: 10px;
+    width: 100% !important;
+    height: 500px; /* adjust height as needed */
+    object-fit: cover;
+}
+
+.caption-bottom {
+    position: relative;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: none;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.textocomodidad {
+    color: white !important;
+    text-decoration: none; /* Asegúrate de que no haya subrayado */
+}
+
+.container{
+    padding-top: 30px;
+}
+
+.offers_area .single_offers {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd; /* Borde alrededor del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow: hidden; /* Asegurar que el contenido no se desborde */
+    background-color: #f8f8f8; /* Color de fondo opcional */
+    margin-bottom: 20px; /* Espacio inferior opcional */
+}
+
+.offers_area .about_thumb {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offers_area .about_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offers_area .description_container {
+    padding: 10px; /* Espacio interno */
+}
+
+.about_thumb {
+    border-radius: 10px !important;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about_thumb .img_1,
+.about_thumb .img_2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_thumb .img_1 img,
+.about_thumb .img_2 img {
+    height: 100%;
+    width: auto; /* Mantener la proporción de la imagen */
+    object-fit: cover;
+}
+
+/* SECCION DE SERVICIOS */
+.about_thumb2 {
+
+    
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about_thumb2 .img_1,
+.about_thumb2 .img_2 {
+    
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_thumb2 .img_1 img,
+.about_thumb2 .img_2 img {
+    
+    height: 100%;
+    width: auto; /* Mantener la proporción de la imagen */
+    object-fit: cover;
+}
+
+.image_container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.description_container {
+    margin-top: 15px;
+}
+
+.rooms_here {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 20px; /* Espacio entre las habitaciones */
+}
+
+.single_rooms {
+    flex: 1 1 calc(50% - 10px); /* Dos columnas con espacio entre ellas */
+}
+
+.room_thumb {
+    border-radius: 10px !important;
+    width: 100% !important;
+    height: 500px !important; /* Altura fija */
+    overflow: hidden !important;
+}
+
+.room_thumb img {
+    
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Mantiene la proporción y cubre el espacio */
+}
+
+.single_rooms {
+     /* Bordes redondeados */
+    margin-bottom: 30px !important; /* Espacio entre habitaciones */
+}
+
+.room-image-container {
+    position: relative;
+    z-index: 1;
+    
+}
+
+.room_heading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    pointer-events: none;
+    
+}
+
+.room_heading a {
+    pointer-events: auto;
+}
+
+/* Estilos para el modal */
+.modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+
+.custom-modal .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+}
+
+.custom-modal .modal-content {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    min-height: 100vh;
+}
+
+.custom-modal .modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1050;
+    background: transparent;
+}
+
+.custom-modal .btn-close {
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    padding: 1rem;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+}
+
+.custom-modal .btn-close:hover {
+    opacity: 1;
+}
+
+.custom-modal .modal-body {
+    padding: 0;
+    height: 100vh;
+}
+
+.custom-modal .modal-img {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+    margin: auto;
+}
+
+/* Asegurarse que las imágenes en el grid son clickeables */
+.room-image-container {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.room-image-container img {
+    transition: transform 0.3s ease;
+}
+
+.room-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.gray-filter {
+    filter:blur(4px) !important;
+}
+
+#info-text {
+    text-align: center;
+    color: blue;
+    text-decoration: solid;
+}

@@ -1,0 +1,194 @@
+/* General body styling */
+body {
+    background-image: url(../../img/Login/login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    backdrop-filter: blur(5px);
+}
+
+/* Form container styling */
+.container-login {
+    background-color: rgb(255, 255, 255, 0.80); /* Fondo blanco con 80% de opacidad */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin: auto; /* Centrar horizontalmente */
+}
+
+/* Header styling */
+h2,h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Input and button styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+
+/* Registrarme link */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #6c757d;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #007bff;
+}
+
+/* Alert styling */
+.alert-danger {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    background-color: #000;
+    margin-top: auto;
+    text-align: center;
+    color: #fff; /* Ajustar el color del texto si es necesario */
+    padding: 10px; /* Ajustar el padding si es necesario */
+}
+
+/* New code block */
+/* General body styling */
+body {
+    background-image: url(../../img/Login/login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    backdrop-filter: blur(5px);
+    padding-top: 50px;
+    box-sizing: border-box;
+    
+}
+
+/* Form container styling */
+.container-login {
+    background-color: rgb(255, 255, 255, 0.80);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    /* Removemos margin: auto ya que flex se encarga del centrado */
+}
+
+/* Header styling */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #070000;
+}
+
+/* Input and button styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+
+
+/* Registrarme link */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #6c757d;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #007bff;
+}
+
+/* Alert styling */
+.alert-danger {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    background-color: #000;
+    margin-top: auto;
+    text-align: center;
+    color: #fff; /* Ajustar el color del texto si es necesario */
+    padding: 10px; /* Ajustar el padding si es necesario */
+}

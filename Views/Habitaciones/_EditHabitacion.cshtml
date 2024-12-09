@@ -1,0 +1,116 @@
+﻿@model Hotel.Models.Habitacione
+
+@{
+    ViewData["Title"] = "Editar Habitación";
+}
+
+<div class="habitacion-edit-container">
+    <h1 class="habitacion-edit-title"><i class="fas fa-edit"></i> Editar Habitación</h1>
+
+    <form asp-action="Edit" id="editForm" class="habitacion-edit-form" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Imagen" />
+
+
+        <!-- Número de Habitación -->
+        <div class="form-group">
+            <label asp-for="NumeroHabitacion" class="control-label"><i class="fas fa-door-closed"></i> Número de
+                Habitación</label>
+            <input asp-for="NumeroHabitacion" class="form-control" maxlength="4" />
+            <span asp-validation-for="NumeroHabitacion" class="text-danger"></span>
+        </div>
+
+        <!-- Descripción -->
+        <div class="form-group">
+            <label asp-for="Descripcion" class="control-label"><i class="fas fa-align-left"></i> Descripción</label>
+            <textarea asp-for="Descripcion" class="form-control"></textarea>
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+
+        <!-- Capacidad -->
+        <div class="form-group">
+            <label asp-for="Capacidad" class="control-label"><i class="fas fa-users"></i> Capacidad</label>
+            <input asp-for="Capacidad" class="form-control" />
+            <span asp-validation-for="Capacidad" class="text-danger"></span>
+        </div>
+
+        <!-- Precio por Noche -->
+        <div class="form-group">
+            <label asp-for="PrecioPorNoche" class="control-label"><i class="fas fa-dollar-sign"></i> Precio por
+                Noche</label>
+            <input asp-for="PrecioPorNoche" class="form-control" />
+            <span asp-validation-for="PrecioPorNoche" class="text-danger"></span>
+        </div>
+
+        <!-- Activo -->
+        <div class="form-group">
+            <label asp-for="Activo" class="control-label"><i class="fas fa-toggle-on"></i> Activo</label>
+            <div class="form-check form-switch">
+                <input type="checkbox" name="Activo" value="true" class="form-check-input" id="switch-@Model.Id"
+                @(Model.Activo.GetValueOrDefault() ? "checked" : "") />
+                <label class="form-check-label" for="switch-@Model.Id">Sí</label>
+            </div>
+            <input type="hidden" name="Activo" value="false" />
+            <span asp-validation-for="Activo" class="text-danger"></span>
+        </div>
+
+        <!-- Comodidades -->
+        <div class="form-group">
+            <label class="control-label"><i class="fas fa-couch"></i> Comodidades</label>
+            <div class="checkbox-grid comodidades-section">
+                @foreach (var comodidad in ViewBag.Comodidades as MultiSelectList)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="habitacion-@Model.Id-comodidad-@comodidad.Value"
+                            name="Comodidades" value="@comodidad.Value" @(Model.Comodidades.Any(c => c.Id.ToString() ==
+                        comodidad.Value) ? "checked" : "") />
+                        <label class="form-check-label"
+                            for="habitacion-@Model.Id-comodidad-@comodidad.Value">@comodidad.Text</label>
+                    </div>
+                }
+            </div>
+            <span asp-validation-for="Comodidades" class="text-danger"></span>
+        </div>
+
+        <!-- Imagen Actual -->
+        <div class="form-group">
+            <label class="control-label"><i class="fas fa-image"></i> Imagen Actual</label>
+            <div class="mb-3">
+                <img src="~/img/habitaciones/@Model.Imagen" alt="Imagen de la habitación" class="img-thumbnail"
+                    onclick="showFullImage(this.src)" />
+            </div>
+        </div>
+
+        <!-- Nueva Imagen -->
+        <div class="form-group">
+            <label for="nuevaImagen" class="control-label"><i class="fas fa-upload"></i> Nueva Imagen (opcional)</label>
+            <input type="file" name="nuevaImagen" class="form-control-file" accept="image/*"
+                onchange="validateFileSize(this)" />
+        </div>
+
+        <div class="modal-footer d-flex justify-content-start">
+            <button type="submit" class="btn btn-primary mr-2">
+                <i class="fas fa-save"></i> Guardar
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">
+                <i class="fas fa-times"></i> Cerrar
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateFileSize(input) {
+        const file = input.files[0];
+        const maxSize = 5 * 1024 * 1024; // 1MB in bytes
+        if (file.size > maxSize) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El tamaño del archivo no debe exceder los 5MB.',
+            });
+            input.value = ""; // Clear the input
+        }
+    }
+</script>

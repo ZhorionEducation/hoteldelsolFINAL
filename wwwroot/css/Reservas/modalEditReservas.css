@@ -1,0 +1,162 @@
+.reserva-edit-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Título */
+.reserva-edit-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Grupos de formulario */
+.reserva-edit-form .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Labels */
+.reserva-edit-form .control-label {
+    color: #34495e;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Inputs y Selects */
+.reserva-edit-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.reserva-edit-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Select específicos */
+.reserva-edit-form select.form-control {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 8px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Contenedor de huéspedes */
+.reserva-edit-huespedes {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.huesped-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
+}
+
+/* Botones */
+.reserva-edit-form .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.reserva-edit-form .btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.reserva-edit-form .btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.reserva-edit-form .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.reserva-edit-form .btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.reserva-edit-form .btn-secondary {
+    background-color: #95a5a6;
+    border-color: #95a5a6;
+}
+
+/* Iconos */
+.reserva-edit-form .iconify {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Checkboxes personalizados */
+.reserva-edit-form .form-check {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.reserva-edit-form .form-check:hover {
+    background-color: #f8f9fa;
+}
+
+.reserva-edit-form .form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.reserva-edit-form .form-check-label {
+    margin-left: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Mensajes de validación */
+.reserva-edit-form .text-danger {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Campos de solo lectura */
+.reserva-edit-form input[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reserva-edit-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .reserva-edit-form .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

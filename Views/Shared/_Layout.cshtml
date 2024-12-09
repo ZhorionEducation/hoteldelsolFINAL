@@ -1,0 +1,504 @@
+﻿@using Microsoft.EntityFrameworkCore
+<!DOCTYPE html>
+<html lang="en">
+@{ 
+    var permisosRequeridos = new[] { "Comodidades", "PermisoRol", "Servicios", "Habitaciones", "Reservas", "Usuarios", "Dashboard" };
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hotel</title>
+    <link rel="icon" href="~/img/favicon.png" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+    <link rel="stylesheet" href="~/css/navNativo.css" />
+    <link rel="stylesheet" href="~/css/bodyNativo.css" />
+    <link rel="stylesheet" href="~/css/sidenav.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="~/css/style.css">
+
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+
+    @if (User?.Identity?.IsAuthenticated == true)
+    {
+        <form id="logoutForm" style="display: none;">
+            @Html.AntiForgeryToken()
+        </form>
+    }
+
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
+    <div id="mySidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-home"></i> Home
+        </a>
+        @if (User?.Identity?.IsAuthenticated == false)
+        {
+            <a asp-area="" asp-controller="Usuarios" asp-action="Create">Registro</a>
+        }
+        @{
+            var userId = User?.Claims?.FirstOrDefault(c => c.Type == "UserId")?.Value;
+            if (!string.IsNullOrEmpty(userId))
+            {
+                var dbContext = Context.RequestServices.GetService(typeof(HotelContext)) as HotelContext;
+                var usuario = dbContext?.Usuarios
+                .Include(u => u.Rol)
+                .ThenInclude(r => r.Permisos)
+                .FirstOrDefault(u => u.Id == Guid.Parse(userId));
+
+                if (usuario != null)
+                {
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Dashboard"))
+                    {
+                        <a asp-area="" asp-controller="Dashboard" asp-action="Index">
+                            <i class="fas fa-chart-line"></i> Dashboard
+                        </a>
+                    }
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Usuarios"))
+                    {
+                        <a asp-area="" asp-controller="Usuarios" asp-action="Index">
+                            <i class="fas fa-user-circle"></i> Usuarios
+                        </a>
+                    }
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Reservas"))
+                    {
+                        <a asp-area="" asp-controller="Reservas" asp-action="Index">
+                            <i class="fas fa-calendar-check"></i> Reservas
+                        </a>
+                    }
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Habitaciones"))
+                    {
+                        <a asp-area="" asp-controller="Habitaciones" asp-action="Index">
+                            <i class="fas fa-door-open"></i> Habitaciones
+                        </a>
+                    }
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Servicios"))
+                    {
+                        <a asp-area="" asp-controller="ServiciosAdicionales" asp-action="Index">
+                            <i class="fas fa-concierge-bell"></i> Servicios
+                        </a>
+                    }
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "PermisoRol"))
+                    {
+                        <a asp-area="" asp-controller="PermisoRol" asp-action="Index">
+                            <i class="fas fa-user-lock"></i> Roles y Permisos
+                        </a>
+                    }
+
+                    if (usuario.Rol.Permisos.Any(p => p.Nombre == "Comodidades"))
+                    {
+                        <a asp-area="" asp-controller="Comodidades" asp-action="Index">
+                            <i class="fas fa-swimming-pool"></i> Comodidades
+                        </a>
+                    }
+
+                    
+
+                    @if (usuario.Rol.Permisos.Any(p => permisosRequeridos.Contains(p.Nombre)))
+                    {
+                        <a asp-area="" asp-controller="Manual" asp-action="Index">
+                            <i class="fas fa-book"></i> Manual Hotel del Sol
+                        </a>
+                    }
+                }
+            }
+        }
+        @if (User?.Identity?.IsAuthenticated == true)
+        {
+            <a asp-area="" asp-controller="Reservas" asp-action="MisReservas">
+                <i class="fas fa-bookmark"></i> Mis Reservas
+            </a>
+        }
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">
+            <i class="fas fa-shield-alt"></i> Privacidad
+        </a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        @if (User?.Identity?.IsAuthenticated == false)
+        {
+            @* <a href="#">
+                <img src="~/img/logo-hotel.png" alt="Hotel del Sol" class="logo-sideNav">
+            </a> *@
+        }
+
+    </div>
+
+
+    <header>
+
+        <div class="header-area">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu d-none d-lg-block">
+
+                                <nav>
+
+                                    <ul id="navigation">
+
+                                        <li class="menu-icon-container">
+                                            <span class="menu-icon" onclick="openNav()">&#9776;Menu</span>
+                                        </li>
+
+
+                                        <li><a href="/#Sobre_Nosotros" class="line-button">Sobre nosotros</a></li>
+                                        <li><a href="/#Habitaciones" class="line-button">Habitaciones</a></li>
+                                        <li><a href="/#Servicios" class="line-button">Servicios</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo-hotel.png"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+
+                                    <ul>
+
+                                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-lg-block">
+                                    @if (User?.Identity?.IsAuthenticated == true)
+                                    {
+                                        <a href="@Url.Action("Create", "Reservas")"> Haz una reserva</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Create", "Usuarios")">Haz una reserva</a>
+                                    }
+                                </div>
+                                @if (User?.Identity?.IsAuthenticated == true)
+                                {
+                                    <div class="user_info d-none d-lg-block ml-3">
+                                        <span class="welcome-text">@Html.Raw("Bienvenid@")
+                                            @User.FindFirst("FullName")?.Value</span>
+                                        <a href="@Url.Action("Count", "Usuarios")" class="btn btn-link">
+                                            <i class="fas fa-user text-warning"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-link notification-button position-relative">
+                                            <i class="fas fa-bell text-warning"></i>
+                                            <span
+                                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notification-count"
+                                                style="display: none;">
+                                                1
+                                                <span class="visually-hidden">notificaciones no leídas</span>
+                                            </span>
+                                        </button>
+
+                                        <button type="button" class="btn btn-link logout-button">
+                                            <i class="fas fa-sign-out-alt text-warning"></i>
+                                        </button>
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="login_btn d-none d-lg-block ml-1" style="transform: scale(0.85);">
+                                        <a href="@Url.Action("Login", "Usuarios")" class="login-link">
+                                            <i class="fas fa-user text-warning"></i>
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="main-content" class="main-content">
+        <main role="main" class="container-fluid p-0">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer mt-auto">
+        <div class="container">
+            &copy; 2024 - Hotel_del_Sol - <a asp-area="" asp-controller="Home" asp-action="Privacy"
+                class="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- JS here -->
+    <script src="~/js/scriptSideNav/sideNav.js"></script>
+    <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/js/ajax-form.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <script src="~/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/js/scrollIt.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/nice-select.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/gijgo.min.js"></script>
+
+
+    <!--contact js-->
+    <script src="~/js/contact.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.form.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+
+    <script src="~/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutButton = document.querySelector('.logout-button');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function () {
+                    // Obtener el token antifalsificación
+                    const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+                    fetch('@Url.Action("Logout", "Usuarios")', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': token
+                        },
+                        credentials: 'same-origin'
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                window.location.href = '@Url.Action("Index", "Home")';
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: 'No se pudo cerrar sesión.'
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Ocurrió un problema al cerrar sesión.'
+                            });
+                        });
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const notificationButton = document.querySelector('.notification-button');
+            const notificationCount = document.querySelector('.notification-count');
+
+            if (notificationButton) {
+                fetch('@Url.Action("CheckNotifications", "Reservas")')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.hasNotification) {
+                            notificationCount.style.display = 'inline';
+                            notificationCount.textContent = data.reservas.length;
+
+                            notificationButton.addEventListener('click', function () {
+                                // Create HTML list of reservations using proper string concatenation
+                                const reservasList = data.reservas.map(reserva => `
+    <div class="reserva-item" data-reserva-id="${reserva.id}">
+        <p>Reserva desde: ${new Date(reserva.fechaInicio).toLocaleDateString('es-ES')} hasta: ${new Date(reserva.fechaFin).toLocaleDateString('es-ES')}</p>
+        <button class="btn btn-primary calificar-btn" onclick="mostrarFormularioCalificacion('${reserva.id}')">Calificar esta reserva</button>
+    </div>
+`).join('');
+
+                                Swal.fire({
+                                    title: 'Reservas pendientes por calificar',
+                                    html: reservasList,
+                                    showCancelButton: true,
+                                    showConfirmButton: false
+                                });
+
+                                // Agregar event listeners a los botones de calificar
+                                document.querySelectorAll('.calificar-btn').forEach(btn => {
+                                    btn.addEventListener('click', function () {
+                                        const reservaId = this.parentElement.dataset.reservaId;
+                                        mostrarFormularioCalificacion(reservaId);
+                                    });
+                                });
+                            });
+
+                            function mostrarFormularioCalificacion(reservaId) {
+                                Swal.fire({
+                                    title: 'Califica tu experiencia siendo 1 lo peor y 5 lo mejor',
+                                    html: `
+<div class="container text-center d-flex justify-content-center align-items-center flex-column">
+    <input type="hidden" id="reservaId" value="${reservaId}">
+    <div class="form-row">
+        <div class="form-group">
+            <label for="calificacionServicio" class="d-block">Califica nuestros servicios:</label>
+            <select id="calificacionServicio" class="form-control form-control-sm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="calificacionHotel" class="d-block">Califica nuestro hotel:</label>
+            <select id="calificacionHotel" class="form-control form-control-sm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="calificacionHabitacion" class="d-block">Califica tu habitación:</label>
+            <select id="calificacionHabitacion" class="form-control form-control-sm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+</div>
+        `,
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Enviar'
+                                }).then(result => {
+                                    if (result.isConfirmed) {
+                                        const calificaciones = {
+                                            calificacionServicio: document.getElementById('calificacionServicio').value,
+                                            calificacionHotel: document.getElementById('calificacionHotel').value,
+                                            calificacionHabitacion: document.getElementById('calificacionHabitacion').value
+                                        };
+                                        enviarCalificacion(reservaId, calificaciones);
+                                    }
+                                });
+                            }
+
+                            function enviarCalificacion(reservaId, calificaciones) {
+                                const ratingModel = {
+                                    reservaId: reservaId,
+                                    calificacionServicio: parseInt(calificaciones.calificacionServicio),
+                                    calificacionHotel: parseInt(calificaciones.calificacionHotel),
+                                    calificacionHabitacion: parseInt(calificaciones.calificacionHabitacion)
+                                };
+
+                                const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+                                fetch('@Url.Action("SubmitRating", "Reservas")', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'RequestVerificationToken': token
+                                    },
+                                    body: JSON.stringify(ratingModel)
+                                })
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            return response.text().then(text => { throw new Error(text) });
+                                        }
+                                        return response.text();
+                                    })
+                                    .then(result => {
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Calificación enviada',
+                                            text: 'Gracias por tu calificación.'
+                                        });
+                                    })
+                                    .catch(error => {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Error',
+                                            text: 'Ocurrió un problema al enviar la calificación.'
+                                        });
+                                    });
+                            }
+                        } else if (data.message) {
+                            notificationButton.addEventListener('click', function () {
+                                Swal.fire('Notificaciones', data.message, 'info');
+                            });
+                        }
+                    });
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('a.line-button').on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    var target = $(hash);
+
+                    if (target.length) {
+                        // Si el elemento objetivo está en la misma página
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 800, function () {
+                            window.location.hash = hash;
+                        });
+                    } else {
+                        // Si el elemento objetivo está en otra página
+                        window.location.href = this.href;
+                    }
+                }
+            });
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

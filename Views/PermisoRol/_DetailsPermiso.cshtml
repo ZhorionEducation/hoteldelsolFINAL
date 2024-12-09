@@ -1,0 +1,32 @@
+﻿@* Views/PermisoRol/_DetailsPermiso.cshtml *@
+@model Hotel.ViewModels.PermisoDetailsViewModel
+<div>
+    <table class="table table-bordered" style="width: 50%;">
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Nombre del Permiso:</td>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Cantidad de Roles:</td>
+            <td>@Model.CantidadRoles</td>
+        </tr>
+        <tr>
+            <td style="width: 30%; font-weight: bold;">Roles con este Permiso:</td>
+            <td>
+                @if (Model.NombresRoles != null && Model.NombresRoles.Any())
+                {
+                    <ul>
+                        @foreach (var nombre in Model.NombresRoles)
+                        {
+                            <li>@nombre</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>No hay roles asignados a este permiso</span>
+                }
+            </td>
+        </tr>
+    </table>
+</div>

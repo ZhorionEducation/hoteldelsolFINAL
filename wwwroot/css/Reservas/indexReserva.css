@@ -1,0 +1,428 @@
+﻿body {
+    background-image: url(/img/Reserva/index1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px); /* Efecto de difuminado */
+    color: #333;
+}
+
+/* MIS RESERVAS INICIA ACA  */
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.export-btn i {
+    font-size: 1.2em;
+}
+
+.pdf-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.pdf-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.excel-btn {
+    background: #28a745;
+    color: white;
+}
+
+.excel-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+.custom-radio {
+    position: relative;
+    padding: 5px;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-label:hover {
+    border-color: #2196F3;
+}
+
+.radio-input:checked + .radio-label {
+    border-color: #2196F3;
+    animation: radioAnim 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.radio-input:checked + .radio-label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #2196F3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: fillIn 0.4s ease-in-out forwards;
+}
+
+@keyframes radioAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fillIn {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* MIS RESERVAS TERMINA ACA  */
+
+.btn-cancelar {
+    background-color: #ff4d4d; /* Color rojo personalizado */
+    color: white;
+    
+}
+
+
+.cancelled-reserva {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    pointer-events: none; /* Disable interactions */
+    opacity: 0.6; /* Make it look disabled */
+}
+
+.cancelled-reserva .custom-radio input[type="radio"] {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+.cancelled-reserva .custom-radio label {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+.cancelled-reserva .button {
+    background-color: #f5c6cb; /* Light red button */
+    color: #721c24; /* Dark red text */
+}
+
+.btn-por-confirmar {
+    background-color: orange;
+    color: white;
+}
+
+.btn-confirmado {
+    background-color: teal;
+    color: white;
+}
+
+.btn-cancelado {
+    background-color: rgba(255, 0, 0, 0.342);
+    color: white;
+}
+
+.containerindexReserva {
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white; /* Fondo completamente blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .header h1 {
+        font-size: 2em;
+        color: #333;
+    }
+
+.button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
+.containerActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .button:hover {
+        background-color: rgba(9, 140, 210, 0.6);
+    }
+    
+
+
+/* Estilos para el contenedor principal */
+.search-container {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    margin-left: auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilos para la caja principal */
+.mainbox {
+    box-sizing: border-box;
+    position: relative;
+    width: 230px;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 160px;
+    background-color: rgba(9, 140, 210, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el checkbox */
+.checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none;
+}
+
+.checkbox:focus {
+    border: none;
+    outline: none;
+}
+
+.checkbox:checked {
+    right: 10px;
+}
+
+.checkbox:checked ~ .mainbox {
+    width: 50px;
+}
+
+.checkbox:checked ~ .mainbox .search_input {
+    width: 0;
+    height: 0px;
+}
+
+.checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+}
+
+/* Estilos para el input de búsqueda */
+.search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.search_input::placeholder {
+    color: rgba(255, 255, 255, 0.776);
+}
+
+/* Estilos para el contenedor del ícono */
+.iconContainer {
+    box-sizing: border-box;
+    padding-top: 5px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el ícono de búsqueda */
+.search_icon {
+    box-sizing: border-box;
+    fill: white;
+    font-size: 1.3em;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white; /* Fondo completamente blanco para la tabla */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+    .table th, .table td {
+        padding: 10px;
+        border: 1px solid #ffffff;
+        text-align: center;
+    }
+
+    .table th {
+        background-color: #433f3f;
+        color: white;
+        text-align: center;
+    }
+
+    .table tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: white;
+    }
+    
+    .table tbody tr:nth-child(even) {
+        background-color: rgb(191, 210, 217);
+    }
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+    .btn-warning:hover {
+        background-color: #ec971f;
+    }
+/* boton detalles */
+.btn-info {
+    background-color: #5bc0de;
+    color: white;
+    padding: 5px 15px;
+}
+
+    .btn-info:hover {
+        background-color: #31b0d5;
+    }
+
+.btn-pay {
+    background-color: #33d143;
+    color: white;
+    padding: 5px 15px;
+}
+
+    .btn-pay:hover {
+        background-color: #67ba84;
+        
+        transition: 0,5s;
+    }
+
+/* boton Reservado, cuando no han hecho pagos */
+
+.btn-danger {
+    background-color: #8d8989 !important;
+    color: white;
+    border-color: #8d8989 !important;
+    padding: 5px 10px;
+}
+
+    .btn-danger:hover {
+        background-color: #c9302c;
+    }
+
+.icon-search {
+    font-size: 22px; /* Cambia esto al tamaño que desees */
+    color: #ffffff; /* Cambia esto al color que desees */
+}
+
+.icon-search:hover {
+    color: #3b3737; /* Cambia esto al color que desees para el estado hover */
+}
+
+
+

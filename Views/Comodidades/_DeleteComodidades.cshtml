@@ -1,0 +1,50 @@
+﻿@model Hotel.Models.Comodidade
+
+@{
+    ViewData["Title"] = "Eliminar Comodidad";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<h1 class="text-center">Eliminar Comodidad</h1>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    <i class="fas fa-tag"></i> Nombre:
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-3 d-flex align-items-center">
+                    <i class="fas fa-info-circle mr-2"></i> Descripción:
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <form id="deleteForm" asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="button" class="btn btn-danger" onclick="confirmDelete()">
+                    <i class="fas fa-trash-alt"></i> Eliminar
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Regresar a comodidades
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+}

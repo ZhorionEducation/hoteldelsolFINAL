@@ -1,0 +1,60 @@
+@model Hotel.Models.Pago
+@using System.Globalization
+
+<h1>Comprobantes de pago</h1>
+<form id="paymentDetailsForm">
+    <div class="form-group">
+        <td for="estadoPago">Estado del Pago</td>
+        <select class="form-control" id="estadoPago" name="Estado">
+            @{
+                var isPorConfirmar = Model.Estado == "Por Confirmar";
+                var isConfirmado = Model.Estado == "Confirmado";
+                var isEnEjecucion = Model.Estado == "En Ejecucion";
+                var isFinalizado = Model.Estado == "Finalizar Reserva";
+                var isCancelar = Model.Estado == "Cancelar Reserva";
+
+            }
+            <option value="Por Confirmar" selected="@isPorConfirmar">Por Confirmar</option>
+            <option value="Confirmado" selected="@isConfirmado">Confirmado</option>
+            <option value="En Ejecucion" selected="@isEnEjecucion">En Ejecución</option>
+            <option value="Finalizado" selected="@isFinalizado">Finalizar Reserva</option>
+            <option value="Cancelado" selected="@isCancelar">Cancelar Reserva</option>
+
+        </select>
+    </div>
+
+    <div class="form-group">
+        <td>Precio Base de la Reserva</td>
+        <p class="text-danger fw-bold fs-4">@(Model.Reserva?.PrecioTotal.ToString("C0", new CultureInfo("es-CO")))</p>
+
+        <td>Precio Total con IVA</td>
+        <p class="text-danger fw-bold fs-4">
+            @{
+                var precioTotal = Model.Reserva?.PrecioTotal ?? 0;
+                var precioConIva = precioTotal * 1.19m;
+            }
+            @precioConIva.ToString("C0", new CultureInfo("es-CO"))
+            <small class="text-muted">(IVA 19%)</small>
+        </p>
+    </div>
+
+    <div class="form-group">
+        <td>Monto abonado</td>
+        <p class="text-success fw-bold fs-4">@Model.Monto.ToString("C", new CultureInfo("es-CO"))</p>
+    </div>
+    <div class="form-group">
+        <td for="comprobantePago">Comprobante</td>
+        @if (!string.IsNullOrEmpty(Model.ComprobantePath))
+        {
+            <div class="comprobante-container">
+                <img src="@Url.Content(Model.ComprobantePath)" class="comprobante-thumbnail"
+                    onclick="showFullImage(this.src)" alt="Comprobante" />
+            </div>
+        }
+        else
+        {
+            <span>No hay comprobante</span>
+        }
+    </div>
+    <input type="hidden" id="pagoId" name="Id" value="@Model.Id" />
+</form>

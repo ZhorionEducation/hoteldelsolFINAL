@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Acceso Denegado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/css/AccessDenied.css")" asp-append-version="true">
+
+<div class="access-denied-container">
+    <div class="access-denied-content">
+        <div class="error-icon">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+        </div>
+        <div class="error-details">
+            <h1>Acceso Denegado</h1>
+            <div class="error-code">Error 403</div>
+            <div class="error-divider"></div>
+            <p class="main-message">No tienes los permisos necesarios para acceder a esta sección.</p>
+            <div class="action-container">
+                <p class="sub-message">Por favor, contacta al administrador si crees que esto es un error.</p>
+                <a href="/" class="btn btn-primary">
+                    <i class="bi bi-house-fill"></i>
+                    <span>Volver al Inicio</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

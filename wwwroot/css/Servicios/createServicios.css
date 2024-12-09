@@ -1,0 +1,129 @@
+/* createServicios.css - Identical to createHabitaciones.css with service-specific classes */
+body {
+    background-image: url(../../img/servicios/crear.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    backdrop-filter: blur(5px);
+}
+
+.container-servicio {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+h1, h2, h4 {
+    color: #008cff;
+    text-align: center;
+}
+
+p {
+    color: #008cff;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 calc(33.33% - 20px);
+    min-width: 250px;
+}
+
+.form-control,
+.form-control-file {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bebbbb;
+    border-radius: 4px;
+    background-color: aliceblue;
+}
+
+.form-check-label {
+    color: #000;
+}
+
+.control-label {
+    color: #000;
+    font-size: large;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch-container .form-check-input {
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #696666;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #000000;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.form-label {
+    color: #000;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    background-color: #000;
+    margin-top: auto;
+    text-align: center;
+    color: #ffffff;
+}

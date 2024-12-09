@@ -1,0 +1,128 @@
+@model IEnumerable<Hotel.Models.Reserva>
+@{
+    ViewData["Title"] = "Hospedajes Activos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userRole = ViewData["UserRole"] as string;
+    var maxHuespedes = userRole == "Administrador" ? 6 : 5;
+}
+
+<link rel="stylesheet" href="~/css/Reservas/modalDetailsReservas.css">
+<link rel="stylesheet" href="~/css/Reservas/modalEditReservas.css">
+<link rel="stylesheet" href="~/css/Reservas/modalPaymentReserva.css">
+<link rel="stylesheet" href="~/css/Reservas/modalsGlobalReservas.css">
+<link rel="stylesheet" href="~/css/Reservas/indexReserva.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/Flick/jquery-ui.css">
+
+<div class="containerindexReserva">
+    <div class="header">
+        <h1>Hospedajes Activos</h1>
+
+        <div class="containerActions">
+            <a asp-action="Index" class="button">
+                <i class="fas fa-arrow-left"></i> Volver a Reservas
+            </a>
+        </div>
+    </div>
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Fecha de Inicio - Fecha de Fin</th>
+                    <th>Habitación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(item.Usuario?.NombreUsuario ?? "N/A")</td>
+                        <td>@item.Usuario?.Nombre</td>
+                        <td>@item.FechaInicio.ToShortDateString() - @item.FechaFin.ToShortDateString()</td>
+                        <td>@item.Habitacion?.NumeroHabitacion</td>
+                        <td>
+                            @if (item.Pagos != null && item.Pagos.Any())
+                            {
+                                @item.Pagos.First().Estado
+                            }
+                            else
+                            {
+                                <span>Reservado</span>
+                            }
+                        </td>
+                        <td>
+                            <button onclick="loadDetailsModal('@item.Id')" class="btn btn-info">
+                                <span class="iconify icon-search" data-icon="line-md:search-filled" data-inline="false"
+                                    data-rotate="auto"></span>
+                            </button>
+                            @if (item.Pagos != null && item.Pagos.Any())
+                            {
+                                <button class="btn btn-pay" onclick="openPaymentDetailsModal('@(item.Pagos.First().Id)')">
+                                    <span class="iconify icon-search" data-icon="mdi:currency-usd" data-inline="false"></span>
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-danger" disabled>
+                                    <span class="iconify icon-search" data-icon="mdi:currency-usd" data-inline="false"></span>
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay hospedajes activos disponibles.</p>
+    }
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <div class="modal-body">
+                <div id="editFormContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="paymentDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="$('#paymentDetailsModal').hide()">&times;</span>
+            <div class="modal-body">
+                <div id="paymentDetailsForm"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closePaymentModal()">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="savePaymentDetails()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetailsModal()">&times;</span>
+            <div class="modal-body">
+                <div id="detailsContainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/scriptReservas/indexReserva.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="~/js/scriptReservas/editReserva.js"></script>
+    <script src="~/js/scriptReservas/huespedesReserva.js"></script>
+    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

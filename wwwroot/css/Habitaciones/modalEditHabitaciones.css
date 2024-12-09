@@ -1,0 +1,242 @@
+.habitacion-edit-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Título */
+.habitacion-edit-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Grupos de formulario */
+.habitacion-edit-form .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Labels */
+.habitacion-edit-form .control-label {
+    color: #34495e;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Inputs y Selects */
+.habitacion-edit-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.habitacion-edit-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Select específicos */
+.habitacion-edit-form select.form-control {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 8px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Botones */
+.habitacion-edit-form .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.habitacion-edit-form .btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.habitacion-edit-form .btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.habitacion-edit-form .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.habitacion-edit-form .btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.habitacion-edit-form .btn-secondary {
+    background-color: #95a5a6;
+    border-color: #95a5a6;
+}
+
+/* Iconos */
+.habitacion-edit-form .iconify {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Checkboxes personalizados */
+.habitacion-edit-form .form-check {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.habitacion-edit-form .form-check:hover {
+    background-color: #f8f9fa;
+}
+
+.habitacion-edit-form .form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.habitacion-edit-form .form-check-label {
+    margin-left: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Mensajes de validación */
+.habitacion-edit-form .text-danger {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Estilo para el grid de checkboxes */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.checkbox-grid .form-check {
+    margin: 0;
+    padding: 0.5rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+}
+
+.checkbox-grid .form-check-input {
+    margin-right: 0.5rem;
+}
+
+.checkbox-grid .form-check-label {
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.checkbox-grid .form-check:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+/* Campos de solo lectura */
+.habitacion-edit-form input[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.habitacion-edit-form .comodidades-section .form-check-input {
+    display: none;
+}
+
+.habitacion-edit-form .comodidades-section .form-check-label {
+    display: block;
+    padding: 0.4rem 0.8rem; /* Reduced padding */
+    border: 2px solid #e9ecef;
+    border-radius: 6px; /* Slightly smaller border radius */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem; /* Smaller font size */
+    text-align: center;
+    max-width: 150px; /* Set maximum width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.habitacion-edit-form .comodidades-section .form-check-input:checked + .form-check-label {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+}
+
+.habitacion-edit-form .comodidades-section .form-check-label:hover {
+    background-color: #f0f0f0;
+}
+
+/* Changed to CSS Grid for better control */
+.habitacion-edit-form .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust min-width */
+    gap: 0.5rem; /* Reduced gap */
+}
+
+.habitacion-edit-form .comodidades-section .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller min-width */
+    gap: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .habitacion-edit-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .habitacion-edit-form .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .habitacion-edit-form .comodidades-section .form-check-label {
+        max-width: 100px; /* Further reduce width on smaller screens */
+        font-size: 0.8rem;
+    }
+
+    .habitacion-edit-form .comodidades-section .checkbox-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .habitacion-edit-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .habitacion-edit-form .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
